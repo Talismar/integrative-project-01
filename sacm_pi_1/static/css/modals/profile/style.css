@@ -1,0 +1,72 @@
+/* define variables */ /* Fonts */
+/* Usada no Header only */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap");
+/* Source Sans Pro */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap");
+/* Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+/* Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/* Outfit */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+#modal-dialog-profile {
+  position: absolute;
+  right: 10px;
+  top: 50px;
+  right: 70px;
+}
+
+#modal-content-profile {
+  background-color: #036e85;
+  width: 210px;
+  /* height: 275px; */
+}
+
+#modal-header-profile {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+#modal-footer-profile {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.screen_profile_head p:nth-of-type(1) {
+  color: #fff;
+  margin: 0;
+}
+
+.screen_profile_head p:nth-of-type(2) {
+  color: #fff;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.screen_profile_main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.screen_profile_main p {
+  margin: 0;
+  color: #fff;
+}
+
+.screen_profile_main a {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 12px;
+  text-decoration: none;
+}
+
+.screen_profile_footer a {
+  background-color: transparent;
+  font-weight: bold;
+  color: #ffb800;
+  text-decoration: none;
+}
+
+.screen_profile_footer a:hover {
+  color: #ffb800;
+}/*# sourceMappingURL=style.css.map */

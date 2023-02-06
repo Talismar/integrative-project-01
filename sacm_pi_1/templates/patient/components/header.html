@@ -1,0 +1,68 @@
+{% load static %}
+
+<header >
+
+  <nav>
+    <ul class="list-header-patient">
+      <li>
+        <a class="{% if home %}changeColor{% endif %}" href="{% url 'patient:home' %}">
+          <img src="{% static 'assets/icons/home_white.svg' %}" alt="Home" />
+          <p>Home</p>
+        </a>
+      </li>
+
+      <li>
+        <a
+          class="{% if diary %}changeColor{% endif %}"
+          href="{% url 'patient:agenda' %}"
+        >
+          <img src="{% static 'assets/icons/notebook_white.svg' %}" alt="Notebook" />
+          <p>Minha agenda</p>
+        </a>
+      </li>
+
+      <li>
+        <a
+          class="{% if about %}changeColor{% endif %}"
+          href="{% url 'patient:sobre' %}"
+        >
+          <img src="{% static 'assets/icons/about_white.svg' %}" alt="About" />
+          <p>Sobre</p>
+        </a>
+      </li>
+
+      <li class="item-profile-notification">
+
+        <a
+          href="#"
+        >
+          <!-- Button trigger modal notification -->
+          <img
+          data-bs-toggle="modal"
+          data-bs-target="#ModalNotificationPatient"
+          src="{% static 'assets/icons/notification_white.svg'%}"
+          alt="profile"
+        />
+
+        <p style="margin-left: -1.5rem; font-size: 1rem;">{{ notification_count }}</p>
+
+        </a>
+
+        <a
+          class="{% if setting %}changeColor{% endif %}"
+          href="#"
+        >
+          <!-- Button trigger modal profile -->
+          <img
+          data-bs-toggle="modal"
+          data-bs-target="#ModalProfilePatient"
+          src="{% static 'assets/icons/profile_medium_white.svg'%}"
+          alt="profile"
+        />
+        </a>
+
+      </li>
+    </ul>
+  </nav>
+
+</header>

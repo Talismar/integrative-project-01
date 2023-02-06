@@ -1,0 +1,234 @@
+@charset "UTF-8";
+/* define variables */ /* Fonts */
+/* Usada no Header only */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap");
+/* Source Sans Pro */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap");
+/* Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+/* Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/* Outfit */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+.container-calendar {
+  display: flex;
+  flex-direction: column;
+  font-family: "Outfit", sans-serif;
+  background-color: #fff;
+  border-radius: 24px;
+  border: 0.5px solid #c2c2c2;
+}
+
+.container-header-calendar {
+  display: flex;
+  justify-content: space-between;
+  padding: 19px 30px 0px 30px;
+}
+.container-header-calendar .legend {
+  width: 257px;
+  height: 118px;
+  border-radius: 12px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.09);
+  padding: 0px 16px;
+}
+.container-header-calendar .legend .atendido {
+  width: 57px;
+  height: 22px;
+  border-radius: 5px;
+  background-color: #25bd2b;
+  position: absolute;
+}
+.container-header-calendar .legend .nao-atendido {
+  width: 57px;
+  height: 22px;
+  border-radius: 5px;
+  background-color: #ff281b;
+  position: absolute;
+}
+.container-header-calendar .legend p {
+  margin-left: 68px;
+}
+
+.container-month {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 7.28px;
+  padding: 20px;
+}
+.container-month > p {
+  text-align: center;
+  margin: 0;
+}
+.container-month .container-days {
+  width: 122px;
+  height: 122px;
+  border: 0.5px solid #c2c2c2;
+  border-radius: 10px;
+  padding: 8px 13px 0 11px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container-month .container-days .flex-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container-month .container-days .flex-1 div {
+  margin-top: -6px;
+  display: flex;
+  gap: 1rem;
+}
+.container-month .container-days .flex-1 div button {
+  background-color: transparent;
+}
+.container-month .container-days .flex-2 {
+  align-self: center;
+}
+.container-month .container-days .flex-2 h2 {
+  margin: 0;
+  margin-top: -4px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+.container-month .container-days .flex-2 h2:nth-of-type(1) {
+  color: #25bd2b;
+}
+.container-month .container-days .flex-2 h2:nth-of-type(2) {
+  color: #ff281b;
+}
+
+/* Apartir daqui foi eu */
+/* fui no .container-header-calendar e mudei o padding top de 19px pra 8px 
+pra ficar mais parecido com o espaçamento do figma*/
+a {
+  text-decoration: none;
+}
+
+.title-year-month h1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 35px;
+  color: #000000;
+}
+
+.title-year-month {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* inicio dos ajustes do ano e mes para ficarem parecidas com a do figma 
+(font e tamanho menores)*/
+:root {
+  --yellow_primary: #ffb800;
+  --white_primary: #fff;
+  --yellow_100: #fff7e5;
+  --red_300: #e45038;
+  --gray_text: #a9a9a9;
+  --gray_text2: #dddddd; /* o gray do figme é mais claro do q os q estão no color global */
+}
+
+.year_month {
+  display: flex;
+  gap: 21.87px;
+}
+
+.year {
+  width: 150px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 60px;
+  color: var(--gray_text2);
+}
+
+.month {
+  width: 265.66px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 60px;
+  color: #000000;
+}
+
+/* borda data mes */
+.year,
+.month {
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  /* pra mudar o icone do select */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url("/static/assets/icons/calendar_year_month_arrow_down.svg");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 5px;
+  background-position-x: 93%;
+  background-position-y: 30px;
+}
+
+/* foi criado uma div com classe year_month, dentro da div foi adicionado
+os 2 select que sao usados para escolher o mes e o ano
+foi atribuido as classes month e year para os selects */
+/* fim dos ajustes */
+/* ajustes no conteiner legenda (espacamento diferent, font muito menor )*/
+.legend {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.legend h3 {
+  color: #000000; /* a cor #212529 estava diferente da do figma */
+  font-size: 24px; /* a do figma é menor */
+}
+
+.color_n_text {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 25%;
+}
+
+.color_n_text,
+.color_n_text2 {
+  font-family: "Outfit";
+  font-style: normal;
+  /* font-weight: 300; padrão*/
+  font-weight: 400; /* aumentei pq o do figma parece mais escuro do q o de 300
+*/
+  font-size: 24px;
+  line-height: 30px;
+  color: #000000;
+  white-space: nowrap;
+}
+
+/* fim dos ajustes */
+/* ajustes calendario */
+/* mudei os icones para um .svg igual, 
+n consegui tirar a barra azul do lado do calendario,
+'a' com text-decoration: none; nao funciona */
+.gray_text {
+  color: var(--gray_text);
+}
+
+/* alterei o nome dos dias */
+/* o ultimo bloco do calendario não estava cinza, mudei a cor */
+.input-month-calendar {
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  width: 270px;
+}
+
+.input-month-calendar::-webkit-calendar-picker-indicator {
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(148deg) brightness(103%) contrast(105%);
+}/*# sourceMappingURL=style.css.map */

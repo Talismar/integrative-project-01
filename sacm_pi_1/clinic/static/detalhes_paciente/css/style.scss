@@ -1,0 +1,244 @@
+@import "../../../../static/global/colors";
+@import "../../../../static/global/fonts";
+
+.container {
+  background-color: $white_primary;
+  // max-width: 1250px;
+  // min-width: 800px;
+
+  display: grid;
+  grid-template-areas: "breadgroup breadgroup" "info-user info-agendamento";
+  grid-template-columns: 400px auto;
+  row-gap: 30px;
+  column-gap: 34px;
+
+  align-items: center;
+  padding: 32px !important;
+
+  border-radius: 24px;
+
+  .breadgroup {
+    grid-area: breadgroup;
+    padding-left: 32px;
+    height: 70px;
+    font-family: "Poppins", sans-serif;
+
+    display: flex;
+    align-items: center;
+
+    background-color: $yellow_100;
+    gap: 16px;
+
+    p {
+      margin: 0;
+      padding: 0;
+      font: {
+        weight: 500;
+        size: 20px;
+      }
+    }
+
+    .item-1 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      p {
+        color: $blue_primary;
+
+        small {
+          color: $gray_text;
+        }
+      }
+    }
+
+    .item-2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      p {
+        color: $gray_text;
+      }
+    }
+  }
+}
+
+.info_user {
+  align-self: stretch;
+  grid-area: "info-user";
+  // margin-bottom: 90px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  background-color: $yellow_100;
+
+  .photo_patient {
+    width: 156px;
+    height: 156px;
+    border-radius: 50%;
+    background-color: $yellow_200;
+  }
+
+  .icons-whattsapp-email {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+
+    a {
+      display: grid;
+      height: 57px;
+      width: 57px;
+
+      background-color: $yellow_200;
+
+      img {
+        justify-self: center;
+        align-self: center;
+      }
+    }
+  }
+
+  .data-person {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    font-family: "Poppins", sans-serif;
+
+    .item {
+      align-self: center;
+      text-align: center;
+    }
+
+    strong {
+      text-align: center;
+
+      font: {
+        weight: 600;
+        size: 24px;
+      }
+    }
+
+    p {
+      color: #455a64;
+      margin: 0px;
+      font: {
+        size: 20px;
+        weight: 500;
+      }
+    }
+  }
+}
+
+.info_patient {
+  display: grid;
+  row-gap: 24px;
+
+  //########## TITLE - SUBTITLE ##############
+  h1 {
+    font: {
+      family: "Poppins", sans-serif;
+      weight: 600;
+    }
+  }
+
+  h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+  }
+
+  //########## LEFT #############
+  .registro_scheduling {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+
+    // background-color: aqua;
+    h2 {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    .left {
+      border-start-start-radius: 20px;
+      border-end-start-radius: 20px;
+    }
+
+    .right {
+      border-top-right-radius: 20px;
+      border-end-end-radius: 20px;
+    }
+
+    .left,
+    .right {
+      background-color: $yellow_100;
+      font-family: "Poppins", sans-serif;
+      font-size: 24px;
+      padding: 24px;
+
+      .item-left,
+      .item-right {
+        strong {
+          color: $yellow_primary;
+          font-weight: 600;
+        }
+
+        p {
+          margin: 0;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .description_patient {
+    .data {
+      height: 350px;
+      background-color: $yellow_100;
+      border-radius: 20px;
+      padding: 34px;
+
+      p {
+        color: #455a64;
+        font: {
+          family: "Poppins", sans-serif;
+          size: 24px;
+          weight: 400;
+        }
+      }
+    }
+  }
+
+  // ######## BUTTON - CANCELAR AGENDAMENTO
+  form {
+    justify-self: flex-end;
+    button {
+      border: none;
+      border-radius: 4px;
+      background-color: $red_400;
+      color: $white_primary;
+      width: 406px;
+      height: 51px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 2s;
+
+      font: {
+        weight: 600;
+        family: "Source Sans Pro", sans-serif;
+        size: 24px;
+      }
+
+      &:hover {
+        background-color: $red_hover;
+        color: $white_primary;
+      }
+    }
+  }
+}

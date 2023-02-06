@@ -1,0 +1,44 @@
+#custom-modal-content-deleteEmployeeModal {
+  background-color: #fff7e5;
+  border-color: red;
+  border-radius: 32px;
+}
+
+#custom-modal-body-deleteEmployeeModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#custom-modal-body-deleteEmployeeModal h1 {
+  font-size: 33px;
+  padding: 69px 18px 50px 18px;
+  margin: 0;
+  font-weight: 400;
+  color: #f0645b;
+  text-align: center;
+}
+
+#custom-modal-body-deleteEmployeeModal div {
+  padding-bottom: 44px;
+  display: flex;
+  gap: 44px;
+}
+
+#custom-modal-body-deleteEmployeeModal button:nth-of-type(1) {
+  background-color: transparent;
+  color: #ffb800;
+  border: 1px solid #ffb800;
+  width: 122px;
+  font-size: 1.5rem;
+}
+
+#custom-modal-body-deleteEmployeeModal a button:nth-of-type(1) {
+  background-color: #ffb800;
+  color: #fff;
+  border: none;
+  width: 122px;
+  height: 3rem;
+  font-size: 1.5rem;
+}

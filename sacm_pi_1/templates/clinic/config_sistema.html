@@ -1,0 +1,152 @@
+{% extends 'clinic/base.html' %}
+{% load static %}
+
+{% block title %}Agenda - SACM{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'settings_adm/01_config_sistema/css/style.css' %}">
+{% endblock style %}
+
+{% block Main %}
+
+<div class="container_ADM">
+  <div class="container_configADM">
+
+    <div class="setting_options_ADM">
+      <div>
+        <a href="#">
+          <button class="btnSysSetting">CONFIGURAÇÕES DO SISTEMA</button>
+        </a>
+
+        <a href="{% url 'clinic:lista_usuario' %}">
+          <button class="btnListUser">LISTA DE USUÁRIOS</button>
+        </a>
+      </div>
+
+      <img src="{% static 'assets/icons/settings_yellow.png' %}" alt="...">
+    </div>
+
+    <div class="container_inputs">
+      <form action="#">
+
+        <div class="item-left">
+          <div>
+            {{ form.name.label_tag }}
+            {{ form.name }}
+          </div>
+
+          <div>
+            {{ form.email.label_tag }}
+            {{ form.email }}
+          </div>
+
+          <div>
+            {{ form.phone_number.label_tag }}
+            {{ form.phone_number }}
+          </div>
+
+          <div>
+            {{ form.address.label_tag }}
+            {{ form.address }}
+          </div>
+
+          <div>
+            {{ form.speciality.label_tag }}
+            {{ form.speciality }}
+          </div>
+
+          <div class="description">
+            {{ form.default_message_cancel.label_tag }}
+            {{ form.default_message_cancel }}
+          </div>
+
+        </div>
+
+        <div class="item-right">
+          <div class="field_date">
+            {{ form.time_per_service.label_tag }}
+            {{ form.time_per_service }}
+          </div>
+
+          <div class="hour-per-period">
+
+            <h2>Horários por período</h2>
+
+            <div>
+              <label for="">Períodos de atendimento</label>
+              <div class="select_period">
+
+                  <div>
+                    <input type="checkbox" name="" id="morning" {% if form.morning_start.value %}checked disabled{% endif %}>
+                    <label for="morning">Manhã</label>
+                  </div>
+
+                  <div>
+                    <input type="checkbox" name="" id="afternoon" {% if form.afternoon_start.value %}checked disabled{% endif %}>
+                    <label for="afternoon">Tarde</label>
+                  </div>
+
+                  <div>
+                    <input type="checkbox" name="" id="night" {% if form.night_start.value %}checked disabled{% endif %}>
+                    <label for="night">Noite</label>
+                  </div>
+
+              </div>
+            </div>
+
+            <div class="field-time-small">
+              <div class="line-inputs">
+                <div class="field_time">
+                  {{ form.morning_start.label_tag }}
+                  {{ form.morning_start }}
+                </div>
+
+                <div  class="field_time">
+                  {{ form.morning_end.label_tag }}
+                  {{ form.morning_end }}
+                </div>
+              </div>
+
+              <div class="line-inputs">
+                <div  class="field_time">
+                  {{ form.afternoon_start.label_tag }}
+                  {{ form.afternoon_start }}
+                </div>
+
+                <div  class="field_time">
+                  {{ form.afternoon_end.label_tag }}
+                  {{ form.afternoon_end }}
+                </div>
+              </div>
+
+              <div class="line-inputs">
+                <div  class="field_time">
+                  {{ form.night_start.label_tag }}
+                  {{ form.night_start }}
+                </div>
+
+                <div  class="field_time">
+                  {{ form.night_end.label_tag }}
+                  {{ form.night_end }}
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <a href="#">
+    {% comment %} <button>SALVAR</button> {% endcomment %}
+  </a>
+</div>
+
+{% endblock Main %}

@@ -1,0 +1,20 @@
+<!-- Modal -->
+<div class="modal fade" id="deleteEmployeeModal_{{ employee.pk }}" tabindex="-1" aria-labelledby="deleteEmployeeModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" id="custom-modal-content-deleteEmployeeModal">
+      <div class="modal-body" id="custom-modal-body-deleteEmployeeModal">
+        <h1>Confirma a exclusão do funcionário?</h1>
+        <div>
+
+          <button type="button" class="btn" data-bs-dismiss="modal">Não</button>
+
+          <a href="{% url 'clinic:delete_employee' employee.pk %}">
+            <button type="button" class="btn">Sim</button>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

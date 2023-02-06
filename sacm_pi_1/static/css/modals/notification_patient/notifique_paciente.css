@@ -1,0 +1,62 @@
+#custom-modal-content-sendMessageCancelModal {
+  background-color: #fff7e5;
+  border: 2px solid #ffb800;
+  border-radius: 32px;
+}
+
+#custom-modal-header-notifica-paciente-sendMessageCancelModal {
+  align-items: flex-start;
+}
+
+#custom-modal-title-notifica-paciente-sendMessageCancelModal {
+  font-size: 36px;
+  color: #ffb800;
+  margin-left: auto;
+  margin-right: calc(auto + 32px + 16px); /* size of icon and size padding */
+  font-weight: 700;
+  /* margin-top: 49px; */
+}
+
+#custom-modal-body-sendMessageCancelModal {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+#custom-modal-body-sendMessageCancelModal h3 {
+  font-size: 24px;
+
+  margin: 0;
+  font-weight: 400;
+  margin-bottom: 18px;
+}
+
+#custom-modal-body-sendMessageCancelModal div {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 6px;
+}
+
+#custom-modal-body-sendMessageCancelModal form {
+  display: flex;
+  flex-direction: column;
+}
+
+#custom-modal-body-sendMessageCancelModal form label {
+  font-size: 24px;
+}
+
+#custom-modal-body-sendMessageCancelModal form textarea {
+  border: 1.5px solid #ffb800;
+  border-radius: 12px;
+  width: 100%;
+}
+
+#custom-modal-body-sendMessageCancelModal button {
+  background-color: #ffb800;
+  color: #fff;
+  border: none;
+  width: 122px;
+  align-self: flex-end;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}

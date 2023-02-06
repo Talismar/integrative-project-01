@@ -1,0 +1,45 @@
+{% load static %}
+
+<!-- Modal Profile -->
+<div
+class="modal fade"
+id="ModalProfilePatient"
+tabindex="-1"
+aria-labelledby="exampleModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog" id="modal-dialog-profile">
+
+  <div class="modal-content" id="modal-content-profile">
+
+    <div class="modal-header" id="modal-header-profile">
+      <div
+        class="modal-title fs-5 screen_profile_head"
+        id="exampleModalLabel"
+      >
+        <p>{{ user.name }}</p>
+        <p>{{ user.username }}</p>
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <div class="screen_profile_main">
+        <a href="{% url 'patient:configuracao_usuario' %}">
+          <img
+            src="{% static 'assets/icons/profile_small_white.svg' %}"
+            alt="icone configurações"
+          />
+          <p>Configurações do usuário</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="modal-footer" id="modal-footer-profile" style="justify-content: flex-start">
+      <div data-bs-dismiss="modal" class="screen_profile_footer">
+        <a href="{% url 'users:logout' %}">Sair</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>

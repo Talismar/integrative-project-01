@@ -1,0 +1,91 @@
+{% load static %}
+<div class="body_7">
+  <div class="background_top">
+    <div class="close_icon">
+      <button>
+        <img
+          class="closeModalRelatorio"
+          src=" {% static 'assets/icons/modals/fechar_relatorio.svg' %} "
+          alt="..."
+        />
+      </button>
+    </div>
+
+    <div class="report">
+      <p>Relatório de agendamentos por período</p>
+    </div>
+  </div>
+  
+  <form class="form" method="get" target="_blank">
+    <div class="date">
+      <div>
+        <p class="select_time">Selecione período:</p>
+      </div>
+
+      <div class="data">
+        <!-- form -->
+        <p>Data inicial</p>
+        <input type="date" name="start_date" value="Data inicial" />
+        <p class="last_date_m">Data final</p>
+        <input type="date" name="end_date" value="Data final" />
+      </div>
+    </div>
+
+    <div class="addtional_information">
+      <div>
+        <p class="informations">Informações adicionais</p>
+      </div>
+
+      <div class="checkbox">
+        <!-- form -->
+
+        <div class="align_center">
+          <input class="bigger_checkbox" type="checkbox" name="with_name" id="name_patient" />
+          <label class="padding_left_checkbox" for="name_patient">Nome do paciente</label>
+        </div>
+
+        <div class="align_center">
+          <input class="bigger_checkbox" type="checkbox" name="with_hour" id="appointment_time"/>
+          <label class="padding_left_checkbox" for="appointment_time"
+            >Horário da consulta</label
+          >
+        </div>
+
+        <div class="align_center">
+          <input class="bigger_checkbox" type="checkbox" name="with_status" id="schedule_status" />
+          <label class="padding_left_checkbox" for="schedule_status"
+            >Status do agendamento</label
+          >
+        </div>
+
+        <div class="type_report">
+          <div class="radio-item">
+            <input type="radio" name="status" value="todos" id="id_all"/>
+            <label class="padding-left" for="id_all">Todos</label>
+          </div>
+
+          <div class="radio-item">
+            <input type="radio"name="status" value="attended" id="id_attended"/>
+            <label class="padding-left" for="id_attended">Atendidos</label>
+          </div>
+
+          <div class="radio-item">
+            <input type="radio" name="status" value="unanswered" id="id_unanswered"/>
+            <label class="padding-left" for="id_unanswered">Não atendidos</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="generate_report">
+        <!-- form -->
+        <button type='submit'>
+          <img
+            src=" {% static 'assets/icons/modals/folha_com_lupa.svg' %} "
+            alt="..."
+          />
+          <p>GERAR RELATÓRIO</p>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

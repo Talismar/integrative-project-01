@@ -1,0 +1,67 @@
+/* Fonts */ /* Fonts */
+/* Usada no Header only */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap");
+/* Source Sans Pro */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap");
+/* Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+/* Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/* Outfit */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+/* define variables */
+#modal-content-cancel {
+  display: flex;
+  align-items: center;
+}
+
+#modal-body-cancel {
+  padding: 0;
+}
+
+.container_modal01 {
+  background-color: #fff;
+  width: 653px;
+  height: 321px;
+  border: 1px solid #ffb800;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 85px 50px 60px 50px;
+}
+.container_modal01 p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 50px;
+  text-align: center;
+  color: #f0645b;
+  padding-bottom: 15px;
+}
+.container_modal01 div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+}
+.container_modal01 div input {
+  box-shadow: 0px 11.8512px 20.7395px 3.95039px rgba(68, 97, 242, 0.15);
+  height: 50px;
+  width: 122px;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 27px;
+}
+.container_modal01 div input:nth-of-type(1) {
+  background-color: #fff;
+  border: 1px solid #ffb800;
+  color: #ffb800;
+}
+.container_modal01 div form input {
+  background-color: #ffb800;
+  color: #fff;
+  border: none;
+}/*# sourceMappingURL=style.css.map */

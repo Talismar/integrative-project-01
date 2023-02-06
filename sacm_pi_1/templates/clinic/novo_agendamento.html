@@ -1,0 +1,158 @@
+{% extends 'clinic/base.html' %}
+{% load static %}
+{% block title %}
+Novo Agendamento
+{% endblock title %}
+
+{% block style %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/novo_agendamento/style.css' %}"
+/>
+
+
+<link rel="stylesheet" href="{% static 'css/modals/not_found_patient/style.css' %}">
+
+{% endblock style %} {% block Main %}
+
+<div class="container">
+  <div class="breadgroup">
+    <a href="{% url 'clinic:agenda_01' %}" class="item-1" style="text-decoration: none;">
+      <img src="{% static 'assets/icons/diary_small_blue.png' %}" alt="...">
+      <p>Agenda Do Dia <small>/</small></p>
+    </a>
+    <div class="item-2">
+      <img src="{% static 'assets/icons/note_pencil_small_gray.png' %}" alt="...">
+      <p>Novo Agendamento</p>
+    </div>
+  </div>
+  <h1>Novo Agendamento</h1>
+  {% comment %} {{ new_schedule }} {% endcomment %}
+
+  <div class="container_inputs">
+
+    {% if not patient %}
+
+      <form method="GET">
+          {% csrf_token %}
+
+          <div style="margin-bottom: 1rem;">
+            <label for="id_matriculation">Buscar paciente</label>
+            <div class="buscar_paciente">
+
+              <input type="hidden" name="new_schedule" value="{{ new_schedule }}" />
+              <input
+                type="text"
+                name="search_patient"
+                id="id_matriculation"
+                value="{{ patient.username }}"
+                placeholder="Digite matrícula do paciente"
+              />
+              <button type="submit" style="color:white;">
+                  Buscar
+              </button>
+            </div>
+          </div>
+      </form>
+    {% endif %}
+
+    {{form.errors}}
+    <form method="POST">
+      {% csrf_token %}
+
+      {{ form.matriculation }}
+      {{ form.speciality }}
+      {{ form.scheduled_by }}
+      {{ form.id_system }}
+      {{ form.status }}
+
+      <div>
+        <label for="id_name">Nome</label>
+        <input
+          type="text"
+          placeholder="Nome do paciente"
+          id="id_name"
+          value="{{ patient.name }}"
+          disabled
+        />
+      </div>
+
+      <div>
+        <label for="id_email">E-mail</label>
+        <input
+          type="email"
+          placeholder="Email do paciente"
+          name="email"
+          id="id_email"
+          value="{{ patient.email }}"
+          disabled
+        />
+      </div>
+
+      <div>
+        <label for="id_phone">Telefone</label>
+        <input
+          type="tel"
+          name="phone_number"
+          id="id_phone"
+          placeholder="Telefone do paciente"
+          value="{{ patient.phone_number }}"
+          disabled
+        />
+      </div>
+
+
+
+      <div class="field_date">
+        {{ form.date.label_tag }}
+        {{ form.date }}
+        {% comment %} <label for="id_date">Data:</label>
+        <input type="date" name="date" id="id_date" value="{{ date_value|date:"Y-m-d" }}"> {% endcomment %}
+      </div>
+
+      <div class="field_time">
+        {{ form.hour.label_tag }}
+        {{ form.hour }}
+      </div>
+
+      <div class="description">
+        {{ form.description.label_tag }}
+        {{ form.description }}
+      </div>
+
+      <button type="submit">
+
+          Agendar
+
+      </button>
+    </form>
+  </div>
+</div>
+
+{% if patient_does_not_exist %}
+
+    {% include "clinic/components/modal_not_found_patient.html" %}
+
+    <script>
+      const modalPatientNotFound = document.querySelector(".container-modal-not-found-patient")
+      modalPatientNotFound.style.display = "block"
+
+      function closeModal() {
+        modalPatientNotFound.style.display = "none"
+      }
+    </script>
+{% endif %}
+
+{% if messages %}
+
+    {% for message in messages %}
+    {% comment %} <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li> {% endcomment %}
+      {% include 'modals/modalSucess.html' %}
+    {% endfor %}
+
+
+{% endif %}
+
+
+{% endblock Main %}

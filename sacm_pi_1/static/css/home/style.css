@@ -1,0 +1,151 @@
+/* define variables */ /* Fonts */
+/* Usada no Header only */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap");
+/* Source Sans Pro */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap");
+/* Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+/* Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/* Outfit */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+.container-home-ADM {
+  background-color: white;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  padding-bottom: 38px;
+}
+.container-home-ADM .container-header {
+  height: 155px;
+  width: 100%;
+  background-color: rgba(3, 110, 133, 0.1);
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container-home-ADM .container-header .title-subtitle {
+  font-family: "Roboto", sans-serif;
+  margin-left: 200px;
+}
+.container-home-ADM .container-header .title-subtitle h1 {
+  font-size: 55px;
+  font-weight: bold;
+}
+.container-home-ADM .container-header .title-subtitle p {
+  font-size: 32px;
+  font-weight: 400;
+  color: rgba(46, 46, 46, 0.65);
+}
+.container-home-ADM .container-header img {
+  height: 300px;
+  width: 400px;
+  margin-top: -10px;
+}
+.container-home-ADM .container-footer {
+  display: flex;
+  gap: 32px;
+}
+.container-home-ADM .container-footer .box-01:nth-of-type(1) {
+  margin-left: 48px;
+}
+.container-home-ADM .container-footer .box-01:nth-of-type(3) {
+  margin-right: 48px;
+}
+.container-home-ADM .container-footer .box-01 {
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+.container-home-ADM .container-footer .box-01 h3 {
+  margin: 0;
+  background-color: #0c9cbb;
+  text-align: center;
+  color: #fff;
+  padding: 8px 0px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+}
+.container-home-ADM .container-footer .box-01 .box-02 {
+  display: flex;
+  gap: 96px;
+  padding: 38px 32px;
+}
+.container-home-ADM .container-footer .box-01 .box-02 .box-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #036e85;
+}
+.container-home-ADM .container-footer .box-01 .box-02 .box-3 p {
+  margin: 0;
+  font-size: 24px;
+  padding-bottom: 24px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  margin-right: 16px;
+}
+.container-home-ADM .container-footer .box-01 .box-02 .box-3 strong {
+  font-family: sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+}
+@media (max-width: 1400px) {
+  .container-home-ADM .container-header {
+    justify-content: center;
+  }
+  .container-home-ADM .container-header .title-subtitle {
+    margin: 0px;
+  }
+  .container-home-ADM .container-header .title-subtitle h1 {
+    font-size: 48px;
+    font-weight: bold;
+  }
+  .container-home-ADM .container-header img {
+    display: none;
+  }
+}
+@media (max-width: 1300px) {
+  .container-home-ADM {
+    width: 100vw;
+    border-radius: 0px;
+  }
+  .container-home-ADM .container-header {
+    border-radius: 0px;
+  }
+  .container-home-ADM .container-header .title-subtitle h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 8px;
+  }
+  .container-home-ADM .container-header .title-subtitle p {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .container-home-ADM .container-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 1300px) and (max-width: 760px) {
+  .container-home-ADM .container-footer {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 1300px) {
+  .container-home-ADM .container-footer .box-01:nth-of-type(1) {
+    margin-left: 0px;
+  }
+}
+@media (max-width: 1300px) {
+  .container-home-ADM .container-footer .box-01:nth-of-type(3) {
+    margin-right: 0px;
+  }
+}/*# sourceMappingURL=style.css.map */

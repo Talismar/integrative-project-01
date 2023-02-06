@@ -1,0 +1,134 @@
+@charset "UTF-8";
+/* define variables */ /* Fonts */
+/* Usada no Header only */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap");
+/* Source Sans Pro */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap");
+/* Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+/* Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/* Outfit */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+.container-cadastrar-usuario {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 24px 0px;
+  /* Global */
+  font-family: "Source Sans Pro", sans-serif;
+}
+.container-cadastrar-usuario > a {
+  width: 326px;
+}
+
+.flex-header-container-inputs {
+  background-color: #fff;
+  padding: 0px 32px;
+  padding-bottom: 35px;
+  border-radius: 6px;
+  /* h1 e icon usuario */
+}
+.flex-header-container-inputs hr {
+  margin: 0;
+}
+.flex-header-container-inputs .flex-container-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-header-container-inputs .flex-container-header h1 {
+  font-weight: 600;
+}
+
+.grid-container-inputs-setting-users {
+  display: grid;
+  grid-template-columns: 620px 620px;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
+  margin-top: 1.5rem;
+  /* Global */
+  /* INPUTS AND LABELS */
+}
+.grid-container-inputs-setting-users label {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+}
+.grid-container-inputs-setting-users .flex-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.grid-container-inputs-setting-users .item-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+.grid-container-inputs-setting-users .item-left .foto-profile {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  align-items: flex-end;
+  /* Botão CARREGAR FOTO */
+}
+.grid-container-inputs-setting-users .item-left .foto-profile div:nth-of-type(1) {
+  /* Simulando foto do perfil */
+}
+.grid-container-inputs-setting-users .item-left .foto-profile div:nth-of-type(1) h3 {
+  font-size: 24px;
+  font-weight: 600;
+}
+.grid-container-inputs-setting-users .item-left .foto-profile div:nth-of-type(1) .circle-profile {
+  width: 139px;
+  height: 139px;
+  background: #fff7e5;
+  border-radius: 50%;
+}
+.grid-container-inputs-setting-users .item-left .foto-profile a {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.grid-container-inputs-setting-users .item-left .telefone {
+  display: grid;
+  grid-template-columns: 107px auto;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+.grid-container-inputs-setting-users .item-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.grid-container-inputs-setting-users .item-right .grid-item {
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 6px));
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+}
+
+.flex-item-radio {
+  display: flex;
+  gap: 12px;
+}
+
+.errorlist {
+  background-color: transparent;
+  justify-content: flex-start;
+  height: auto;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.errorlist li {
+  color: #d20202;
+}
+.errorlist li .errorlist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.errorlist li .errorlist li {
+  color: black;
+}/*# sourceMappingURL=style.css.map */

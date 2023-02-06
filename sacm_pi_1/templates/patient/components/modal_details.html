@@ -1,0 +1,113 @@
+{% load static %}
+
+<!-- Modal Details - Clinic and Doctor -->
+<div
+class="modal fade"
+id="ModalDetailsClinicDoctor_{{ i.pk }}"
+tabindex="-1"
+aria-labelledby="exampleModalLabels"
+aria-hidden="true"
+>
+    <div class="modal-dialog" id="modal-dialog-details-clinic-doctor">
+
+        <div class="modal-content" id="modal-content-details-clinic-doctor">
+            
+            <div class="modal-body" id="modal-body-details-clinic-doctor">
+
+                <div class="container-modal-details-patient">
+                    
+                    <div class="header-modal-details-patient">
+                        <div></div>
+                        <h2>Detalhes do agendamento</h2>
+                        
+                        <button type="button" data-bs-dismiss="modal" aria-label="Close">
+                            <img
+                                src="{% static 'assets/icons/modals/fechar_datalhes.svg' %}"
+                                alt=""
+                            />
+                        </button>
+                    </div>
+
+                    <div class="content-modal-details-patient">
+                        <div class="item-modal-details-patient-1">
+                            
+                            <h3>{{ i.id_system.name }}</h3>
+                            
+                            <div>
+                                <strong>Endereço:</strong>
+                                <p>{{ i.id_system.address }}</p>
+                            </div>
+                        
+                            <div class="img-with-text">
+                                <strong>Email:</strong>
+                                <div>
+                                    <img src="{% static 'assets/icons/modals/email.svg' %}" alt="" />
+                                    <p>{{ i.id_system.email }}</p>
+                                </div>
+                            </div>
+                        
+                            <div class="img-with-text">
+                                <strong>Telefone:</strong>
+                                <div>
+                                    <img src="{% static 'assets/icons/modals/whatsapp.svg' %}" alt="" />
+                                    <p>{{ i.id_system.phone_number }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item-modal-details-patient-2">
+                            
+                            <h3>Informações sobre o Médico</h3>
+                            
+                        
+                            <div>
+                                
+                                <div class="name-photo-doctor">
+                                
+                                    <div>
+                                        <strong>Nome:</strong>
+                                        <p>{{ i.id_system.speciality.doctor_set.values.0.name }}</p>
+                                    </div>
+                                
+                                    <div class="doctor_photo">
+
+                                        {% if i.id_system.speciality.doctor_set.values.0.photo %}
+                                            <img src="/media/{{ i.id_system.speciality.doctor_set.values.0.photo }}" style="width: 156px;
+                                            height: 156px; 
+                                            object-fit: cover;
+                                            border-radius: 50%;
+                                            " alt="">
+                                        {% endif %}
+                                        
+                                    </div>
+                                
+                                </div>
+                                
+                            </div>
+                        
+                            <div class="img-with-text">
+                                <strong>CRM:</strong>
+                                <div>
+                                    <img src="{% static 'assets/icons/modals/email.svg' %}" alt="" />
+                                    <p>{{ i.id_system.speciality.doctor_set.values.0.crm }}</p>
+                                </div>
+                            </div>
+                        
+                            <div class="img-with-text">
+                                <strong>Telefone:</strong>
+                                <div>
+                                    <img src="{% static 'assets/icons/modals/whatsapp.svg' %}" alt="" />
+                                    <p>{{ i.id_system.speciality.doctor_set.values.0.phone_number }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+</div>

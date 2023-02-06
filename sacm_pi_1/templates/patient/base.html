@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block Styles %}
+
+<!-- Base -->
+<link rel="stylesheet" href="{% static 'base/css/style.css' %}">
+
+<!-- Modal Profile -->
+<link rel="stylesheet" href="{% static 'css/modals/profile/style.css' %}">
+
+<!-- Modal Notification -->
+<link rel="stylesheet" href="{% static 'css/modals/notification/style.css' %}">
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- Local -->
+{% block Styles_Patient %}{% endblock Styles_Patient %}
+
+{% endblock Styles %}
+
+{% block Content %}
+
+  <div class="ellipse-bg-01"></div>
+  <div class="ellipse-bg-02"></div>
+  <div class="ellipse-bg-03"></div>
+
+  <div class="base_patient_sector">
+
+    {% include 'patient/components/header.html' %}
+
+    <main>
+      {% block Main_Patient %}{% endblock Main_Patient %}
+    </main>
+
+    {% include './components/modal_profile.html' %}
+    {% include './components/modal_notification.html' %}
+
+
+  </div>
+{% endblock Content %}

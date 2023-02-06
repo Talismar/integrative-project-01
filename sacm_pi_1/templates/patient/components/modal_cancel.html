@@ -1,0 +1,41 @@
+{% load static %}
+
+<!-- Modal Cancel - Schedule -->
+<div
+class="modal fade"
+id="ModalCancel_{{ i.pk }}"
+tabindex="-1"
+aria-labelledby="exampleModalLabel"
+aria-hidden="true"
+>
+    <div class="modal-dialog" id="modal-dialog-cancel">
+
+        <div class="modal-content" id="modal-content-cancel">
+
+            <div class="modal-body" id="modal-body-cancel">
+
+                <div class="container_modal01">
+                    <p>Tem certeza que deseja cancelar este agendamento?</p>
+
+                    <div>
+                      <input class="close-02" data-bs-dismiss="modal" type="button" value="Não" />
+
+                    <form action="{% url 'clinic:cancel_schedule' %}" method="get">
+                        <input type="hidden" name="_pk_" value="{{ i.pk }}">
+                        <input
+                            type="submit"
+                            id="ButtonModalNotificaPacienteConsultorio"
+                            value="Sim"
+                            style="background-color: #ffb800;
+                            color: #fff; border: none;"
+                        />
+                    </form>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

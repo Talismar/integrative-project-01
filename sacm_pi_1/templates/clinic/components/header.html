@@ -1,0 +1,55 @@
+{% load static %}
+
+<header>
+  <nav>
+    <ul>
+      <li>
+        <a class="{% if home %}changeColor{% endif %}" href="{% url 'clinic:home' %}">
+          <img src="{% static 'assets/icons/home_white.svg' %}" alt="Home" />
+          <p>Home</p>
+        </a>
+      </li>
+      <li>
+        <a
+          class="{% if diary %}changeColor{% endif %}"
+          href="{% url 'clinic:agenda_01' %}"
+        >
+          <img src="{% static 'assets/icons/notebook_white.svg' %}" alt="Notebook" />
+          <p>Agenda</p>
+        </a>
+      </li>
+      <li>
+        <a
+          class="{% if calendar %}changeColor{% endif %}"
+          href="{% url 'clinic:calendario' %}"
+        >
+          <img src="{% static 'assets/icons/calendar_white.svg' %}" alt="Calendar" />
+          <p>Calendário</p>
+        </a>
+      </li>
+      <li>
+        <a
+          class="{% if about %}changeColor{% endif %}"
+          href="{% url 'sobre' %}"
+        >
+          <img src="{% static 'assets/icons/about_white.svg' %}" alt="About" />
+          <p>Sobre</p>
+        </a>
+      </li>
+      <li>
+        <a
+          class="{% if setting %}changeColor{% endif %}"
+          href="#"
+        >
+          <img
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          src="{% static 'assets/icons/profile_medium_white.svg'%}"
+          alt="profile"
+        />
+        </a>
+
+      </li>
+    </ul>
+  </nav>
+</header>

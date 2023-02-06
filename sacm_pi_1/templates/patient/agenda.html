@@ -1,0 +1,174 @@
+{% extends 'patient/base.html' %}
+{% load static %}
+
+{% block Title %}
+Agenda - SACM
+{% endblock Title %}
+
+{% block Styles_Patient %}
+<link rel="stylesheet" type="text/css" href="{% static 'pages/css/agenda/style.css' %}">
+
+<!-- Modal Cancel -->
+<link rel="stylesheet" href="{% static 'css/modals/cancel/style.css' %}">
+<!-- Modal Details Clinic and Doctor -->
+<link rel="stylesheet" href="{% static 'css/modals/details/style.css' %}">
+
+<style>
+  .modal-backdrop.show {
+    z-index: -2;
+  }
+</style>
+
+{% endblock Styles_Patient %}
+
+{% block Main_Patient %}
+
+<div class="box_container">
+
+  <div class="circle_container">
+    <div class="circle">
+      <img src="{% static 'assets/icons/calendar_yellow.png' %}" alt="Icon Calendário">
+    </div>
+  </div>
+
+  <div class="box_header">
+
+    <section class="title">
+
+      <h1>Minha Agenda</h1>
+
+      <div class="header-filter-buttons">
+        <form method="get">
+          <select name="" id="">
+            <option value="date_option">Data</option>
+            {% comment %} <option value="">Matrícula</option> {% endcomment %}
+          </select>
+
+          <input type="date" name="date" id="id_date">
+
+          <button type="submit">BUSCAR</button>
+
+          <a href="{% url 'patient:novo_agendamento' %}">
+            <img src="{% static 'assets/icons/circle_plus_medium.svg' %}" alt="...">
+          </a>
+        </form>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <section class="box_main">
+
+    <div class="table_diary">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th style="width: 25%">Data</th>
+            <th style="width: 20%">Hora</th>
+            <th style="width: 25%">Especialidade</th>
+            <th style="width: 20%">Situação</th>
+            <th style="width: 10%">Ações</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          {% for i in list_schedule %}
+
+
+            <tr class="
+                  {% if i.status.name == 'Cancelado' %}check-cancelado{% endif %}
+                  {% if i.status.name == 'Concluído' %}check{% endif %}
+                ">
+              <td>{{ i.date|date:"d/m/Y" }}</td>
+              <td>{{ i.hour|time:"H:i" }}</td>
+              <td>{{ i.id_system.speciality }}</td>
+              <td>{{ i.status }}</td>
+              <td class="action">
+
+                {% if not i.status.name == 'Pendente' %}
+
+                  <button>
+                    <img src="{% static 'assets/icons/view_small_yellow_dark.svg' %}" alt="check">
+                  </button>
+
+                  <a href="#">
+                    <img src="{% static 'assets/icons/note_pencil_check.png' %}" alt="View Paciente">
+                  </a>
+
+                  <button>
+                    <img src="{% static 'assets/icons/x_square_red_check.png' %}" alt="Cancel">
+                  </button>
+
+                {% else %}
+
+                  <button
+                      data-bs-toggle="modal"
+                      data-bs-target="#ModalDetailsClinicDoctor_{{ i.pk }}">
+                      <img src="{% static 'assets/icons/view_small_yellow.svg' %}"  alt="check">
+                  </button>
+
+                  <a href="{% url 'patient:atualizar_agendamento' i.pk %}">
+                    <img src="{% static 'assets/icons/note_pencil_small_blue.svg' %}" alt="View Paciente">
+                  </a>
+
+                  <!-- Button trigger modal details -->
+                  <button
+                  data-bs-toggle="modal"
+                  data-bs-target="#ModalCancel_{{ i.pk }}"
+                    >
+                      <img src="{% static 'assets/icons/x_square_red.svg' %}" id="myBtn"  alt="Cancel">
+                  </button>
+
+                {% endif %}
+              </td>
+            </tr>
+
+            {% include 'patient/components/modal_cancel.html' %}
+            {% include 'patient/components/modal_details.html'  %}
+          {% endfor %}
+
+        </tbody>
+      </table>
+
+    </div>
+
+    <div class="pagination">
+      {% if page_obj.paginator.num_pages != 1 %}
+      {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+      {% endif %}
+
+
+      {% for i in page_obj.paginator.page_range %}
+          {% if page_obj.number == i %}
+              <a href="#" class="active">{{ i }}</a>
+          {% else %}
+              <a href="?page={{ i }}">{{ i }}</a>
+          {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+      {% endif %}
+      {% endif %}
+    </div>
+  </section>
+
+</div>
+
+
+{% if messages %}
+
+    {% for message in messages %}
+      {% include 'modals/modalSucess.html' %}
+    {% endfor %}
+
+
+{% endif %}
+
+{% endblock Main_Patient %}

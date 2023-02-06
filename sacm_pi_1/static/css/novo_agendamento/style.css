@@ -1,0 +1,187 @@
+@charset "UTF-8";
+/* define variables */ /* Fonts */
+/* Usada no Header only */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap");
+/* Source Sans Pro */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap");
+/* Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+/* Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/* Outfit */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+.container {
+  background-color: #fff;
+  max-width: 1250px;
+  min-width: 800px;
+  margin: 35px 0;
+  padding-bottom: 35px;
+  border-radius: 24px;
+}
+.container .breadgroup {
+  height: 70px;
+  margin: 30px 35px;
+  padding-left: 32px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  background-color: #fff7e5;
+  gap: 16px;
+}
+.container .breadgroup p {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  font-size: 20px;
+}
+.container .breadgroup .item-1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.container .breadgroup .item-1 p {
+  color: #036e85;
+}
+.container .breadgroup .item-1 p small {
+  color: #a9a9a9;
+}
+.container .breadgroup .item-2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.container .breadgroup .item-2 p {
+  color: #a9a9a9;
+}
+.container h1 {
+  text-align: center;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+}
+
+.container_inputs {
+  display: flex;
+  font-family: "Source Sans Pro", sans-serif;
+  flex-direction: column;
+  margin: 0px 22px;
+}
+.container_inputs form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* Buttom submit */
+}
+.container_inputs form > button {
+  align-self: center;
+  width: 536px;
+  height: 60px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 16px;
+  background-color: #ffb800;
+  color: #fff;
+  align-self: flex-end;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+}
+.container_inputs form div {
+  display: flex;
+  flex-direction: column;
+  /* 
+    Remove outline inputs
+  */
+}
+.container_inputs form div input {
+  outline: none;
+}
+.container_inputs form div .buscar_paciente {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+.container_inputs form div .buscar_paciente input {
+  flex-grow: 1;
+}
+.container_inputs form div .buscar_paciente button {
+  width: 254px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffb800;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+}
+.container_inputs form div .buscar_paciente button a {
+  color: #fff;
+  text-decoration: none;
+}
+.container_inputs form div .telefone {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+.container_inputs form div .telefone input {
+  flex-grow: 1;
+}
+.container_inputs form div .telefone select {
+  width: 146px;
+}
+.container_inputs form div.description textarea {
+  height: 172px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.container_inputs form div select {
+  border-radius: 5px;
+  border: 1px solid #ffb800;
+  background: #fff7e5;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 400;
+  padding-left: 24px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url("../../../../static/assets/icons/check_small_yellow.svg");
+  background-repeat: no-repeat;
+  background-position: right 24px top 22px;
+}
+.container_inputs label {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+}
+.container_inputs input,
+.container_inputs textarea {
+  border-radius: 5px;
+  border: 1px solid #ffb800;
+  background: #fff7e5;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 400;
+  padding-left: 24px;
+}
+
+/* 
+  Removendo os icones padrão e adicionando personalizados nos inputs
+*/
+.field_date input::-webkit-calendar-picker-indicator {
+  filter: invert(57%) sepia(98%) saturate(479%) hue-rotate(1deg) brightness(109%) contrast(101%);
+  margin-right: 21px;
+}
+
+.field_time input[type=time]::-webkit-calendar-picker-indicator {
+  filter: invert(57%) sepia(98%) saturate(479%) hue-rotate(1deg) brightness(109%) contrast(101%);
+  margin-right: 21px;
+}
+
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url("../../../../static/assets/icons/check_small_yellow.svg");
+  background-repeat: no-repeat;
+  background-position-x: 90%;
+  background-position-y: 18px;
+}/*# sourceMappingURL=style.css.map */

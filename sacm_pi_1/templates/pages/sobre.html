@@ -1,0 +1,38 @@
+{% extends 'clinic/base.html' %}
+{% load static %}
+
+{% block title %}Sobre{% endblock title %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'sobre/css/style.css' %}">
+{% endblock style %}
+
+{% block Main %}
+
+<div class="box_container">
+
+  <div class="circle_container">
+    <div class="circle">
+      <img src="{% static 'assets/icons/about_yellow.png' %}" alt="Icon Calendário">
+    </div>
+  </div>
+
+  <div class="box_header">
+
+    <h1>Sobre</h1>
+
+  </div>
+
+  <section class="box_main">
+
+    <p>
+      O <strong>Sistema de Agendamento de Consultas Médicas</strong> foi desenvolvido como parte do projeto  integrador do quarto período de Análise e Desenvolvimento de Sistemas  do IFRN, com o intuito de auxiliar os profissionais da área da saúde que atuam no IFRN.
+      <br><br>
+      O sistema tem por objetivo trazer organização e praticidade para o setor médico, permitindo que o agendamento das consultas seja facilmente controlável.
+
+    </p>
+
+  </section>
+
+</div>
+
+{% endblock Main %}

@@ -1,0 +1,109 @@
+/* define variables */ /* Fonts */
+/* Usada no Header only */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap");
+/* Source Sans Pro */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap");
+/* Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+/* Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/* Outfit */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+#modal-dialog-details-clinic-doctor {
+  display: flex;
+  justify-content: center;
+}
+
+#modal-content-details-clinic-doctor {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+#modal-body-details-clinic-doctor {
+  padding: 0;
+}
+
+.container-modal-details-patient {
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.header-modal-details-patient {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #fff7e5;
+  padding: 21px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.header-modal-details-patient h2 {
+  margin: 8px 0;
+  font-weight: 700;
+  color: #ffb800;
+  font-size: 36px;
+}
+.header-modal-details-patient button {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.content-modal-details-patient {
+  display: grid;
+  grid-template-areas: "item1 item2";
+  -moz-column-gap: 170px;
+       column-gap: 170px;
+}
+
+.item-modal-details-patient-1 {
+  grid-area: item1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 2.5rem;
+}
+.item-modal-details-patient-1 div.img-with-text p {
+  margin: 0;
+}
+.item-modal-details-patient-1 div.img-with-text div {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.item-modal-details-patient-2 {
+  grid-area: item2;
+  margin: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.item-modal-details-patient-2 h3 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.item-modal-details-patient-2 div.img-with-text p {
+  margin: 0;
+}
+.item-modal-details-patient-2 div.img-with-text div {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.item-modal-details-patient-2 div div.name-photo-doctor {
+  display: grid;
+  grid-template-columns: 425px 156px;
+  -moz-column-gap: 114px;
+       column-gap: 114px;
+}
+.item-modal-details-patient-2 div div.name-photo-doctor div.doctor_photo {
+  position: relative;
+  top: -60px;
+  width: 156px;
+  height: 156px;
+  background-color: #fff7e5;
+  border-radius: 100%;
+}/*# sourceMappingURL=style.css.map */

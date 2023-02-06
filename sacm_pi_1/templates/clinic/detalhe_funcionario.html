@@ -1,0 +1,222 @@
+{% extends 'clinic/base.html' %}
+{% load static %}
+
+{% block title %}Meu Perfil{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'settings_adm/02_config_usuario/css/style.css' %}">
+
+{% if form.photo.value %}
+<style>
+  #id_photo::before {
+    content: "ALTERAR FOTO";
+  }
+</style>
+{% else %}
+<style>
+  #id_photo::before {
+    content: "SELECIONAR FOTO";
+  }
+</style>
+{% endif %}
+
+{% endblock style %}
+
+{% block Main %}
+
+<div class="container_ADM">
+
+  <div class="container_configADM">
+
+    <div>
+      <h1>Meu Perfil</h1>
+    </div>
+
+    <hr>
+
+    {{ form.errors }}
+    <div class="container_inputs">
+
+      <form method="post"  enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="item-left">
+
+          <div class="foto-profile">
+
+            <div>
+              <h3>Foto</h3>
+              <div class="circle-profile">
+                {% if form.photo.value %}
+
+                  <img src="{{ form.photo.value.url }}" alt="..."
+                            style="width: 156px;
+                            height: 156px;
+                            object-fit: cover;
+                            border-radius: 50%;
+                            "
+                  />
+
+                {% endif %}
+              </div>
+            </div>
+
+            <div>
+
+              {{ form.photo.label_tag }}
+              {{ form.photo }}
+
+            </div>
+          </div>
+
+          <script>
+            const changeColorWhenClicked = document.querySelector('label[for="photo-clear_id"]')
+            let father = changeColorWhenClicked.parentElement.innerHTML
+
+            father = father.replace('Atualmente', '')
+            father = father.replace("Modificar", "")
+            father = father.replace(': ', "")
+            father = father.replace('', "")
+            father = father.replace('<br>', '')
+
+            changeColorWhenClicked.parentElement.innerHTML = father
+
+            {% comment %} changeColorWhenClicked.addEventListener('click', () => {
+
+              if (changeColorWhenClicked.style.backgroundColor == 'rgb(245, 214, 215)'){
+                changeColorWhenClicked.style.backgroundColor = '#fff7e5'
+              }else{
+                changeColorWhenClicked.style.backgroundColor = '#f5d6d7'
+              }
+              console.log('changeColorWhenClicked')
+
+            }) {% endcomment %}
+
+          </script>
+
+          <div>
+            {{ form.name.label_tag }}
+            {{ form.name }}
+          </div>
+
+          <div>
+            {{ form.email.label_tag }}
+            {{ form.email }}
+          </div>
+
+          <div>
+            {{ form.phone_number.label_tag }}
+            {{ form.phone_number }}
+          </div>
+
+          <div>
+            {{ form.username.label_tag }}
+            {{ form.username }}
+          </div>
+
+          <div>
+
+            <div class="line-inputs">
+
+              <div>
+                {{ form.birth_date.label_tag }}
+                {{ form.birth_date }}
+              </div>
+
+              <div>
+                {{ form.cpf.label_tag }}
+                {{ form.cpf }}
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="item-right">
+
+          <div>
+            {{ form.gender.label_tag }}
+            <div class="genero">
+
+              <div>
+                {{ form.gender.0.tag }}
+                <label for="id_gender_0">
+                  {{ form.gender.0.choice_label }}
+                </label>
+              </div>
+
+              <div>
+                {{ form.gender.1.tag }}
+                <label for="id_gender_1">
+                  {{ form.gender.1.choice_label }}
+                </label>
+              </div>
+
+            </div>
+          </div>
+
+          <div>
+            <label for="id_category">Categoría do usuário</label>
+            <input type="text" id='id_category' placeholder="Categoria"
+                   value="{% if form.speciality.value %}Médico{% else %}Funcionário{% endif %}" disabled/>
+          </div>
+
+           <div>
+
+            {% comment %}
+              Se for médico
+            {% endcomment %}
+
+            {% if form.speciality %}
+              <div class="line-inputs">
+
+                <div>
+                  {{ form.speciality.label_tag }}
+                  {{ form.speciality }}
+                </div>
+
+                <div>
+                  {{ form.crm.label_tag }}
+                  {{ form.crm }}
+                </div>
+
+              </div>
+            {% endif %}
+           </div>
+
+
+           <div class="change-passwd">
+
+            <hr>
+
+            <h2>Alterar a Senha</h2>
+
+            <div>
+              {{ password_form.old_password.label_tag }}
+              {{ password_form.old_password }}
+            </div>
+
+            <div>
+              {{ password_form.new_password1.label_tag }}
+              {{ password_form.new_password1 }}
+            </div>
+
+            <div>
+              {{ password_form.new_password2.label_tag }}
+              {{ password_form.new_password2 }}
+            </div>
+          </div>
+
+          <button type="submit" id="btn-submit-profile" style="{% if form.speciality %}margin-top: 1rem;{% endif %}">ATUALIZAR PERFIL</button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+</div>
+
+{% endblock Main %}

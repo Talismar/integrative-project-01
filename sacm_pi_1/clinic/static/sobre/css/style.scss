@@ -1,0 +1,66 @@
+@import "../../../../static/global/colors";
+@import "../../../../static/global/fonts";
+
+.box_container {
+  height: 793px;
+  width: 1371px;
+  background-color: $white_primary;
+  border-radius: 25px;
+  font-family: 'Poppins', sans-serif;
+
+  .circle_container {
+    position: absolute;
+
+    .circle{
+      width: 80px;
+      height: 88px;
+      border-radius: 50%;
+      background-color: $white_primary;
+      position: relative;
+      top: 98px;
+      left: -40px;
+      
+      img {
+        margin: 16px;
+        margin-top: 22px;
+      }
+    }
+  }
+
+  .box_header {
+    margin: 42px 0 32px 60px;
+
+    h1 {
+      font-size: 48px;
+    }
+  }
+
+  .box_main{
+
+    margin-left: 60px;
+    margin-right: 46px;
+
+    p{
+      font-size: 36px;
+      text-align: justify;
+    }
+  }
+
+  
+}
+
+.box_container {
+  
+  @media (max-width: 1500px){
+    border-radius: 0;
+
+    height: 100%;
+    width: 100%;
+
+    .circle_container {
+      display: none;
+    }
+  
+  }
+
+}

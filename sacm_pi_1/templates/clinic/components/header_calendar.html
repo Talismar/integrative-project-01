@@ -1,0 +1,79 @@
+{% load static %}
+
+<header>
+  <nav>
+    <ul>
+      <li style="align-self: center" class="image-header-calendar">
+        <img src="{% static 'assets/imgs/logo_small.png' %}" alt="..." />
+      </li>
+
+      <li>
+        <a
+          class="{% if home %}changeColor{% endif %}"
+          href="{% url 'clinic:home' %}"
+        >
+          <img src="{% static 'assets/icons/home_white.svg' %}" alt="Home" />
+          <p>Home</p>
+        </a>
+      </li>
+      <li>
+        <a
+          class="{% if diary %}changeColor{% endif %}"
+          href="{% url 'clinic:agenda_01' %}"
+        >
+          <img
+            src="{% static 'assets/icons/notebook_white.svg' %}"
+            alt="Notebook"
+          />
+          <p>Agenda</p>
+        </a>
+      </li>
+      <li id="js_color_change1">
+        <a
+          class="{% if calendar %}changeColor{% endif %}"
+          href="{% url 'clinic:calendario' %}"
+          id="color_change"
+        >
+          <img
+            src="{% static 'assets/icons/calendar_white.svg' %}"
+            alt="Calendar"
+          />
+          <p id="p_padding_js2" class="js_color_change">Calendário</p>
+        </a>
+      </li>
+
+      <li id="js_color_change2">
+        <a
+          class="{% if about %}changeColor{% endif %}"
+          id="ButtonModalRelatorio"
+          style="background-color: transparent; border: none;"
+          href="#"
+        >
+          <img
+            id="img_padding_js"
+            src="{% static 'assets/icons/report_small_yellow.svg' %}"
+            alt="About"
+          />
+          <p id="p_padding_js">Relatório</p>
+        </a>
+      </li>
+
+      <li>
+        <a
+          class="{% if about %}changeColor{% endif %}"
+          href="{% url 'sobre' %}"
+        >
+          <img src="{% static 'assets/icons/about_white.svg' %}" alt="About" />
+          <p>Sobre</p>
+        </a>
+      </li>
+
+      <li style="align-self: center" class="image-header-calendar">
+        <img
+          src="{% static 'assets/imgs/sigla_small_yellow.svg' %}"
+          alt="..."
+        />
+      </li>
+    </ul>
+  </nav>
+</header>

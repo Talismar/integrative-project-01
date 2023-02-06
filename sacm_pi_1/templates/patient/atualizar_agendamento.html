@@ -1,0 +1,72 @@
+{% extends 'patient/base.html' %}
+{% load static %}
+
+{% block Title %}Atualizar Agendamento{% endblock %}
+
+{% block Styles_Patient %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/atualizar_agendamento/style.css' %}">
+{% endblock Styles_Patient %}
+
+{% block Main_Patient %}
+
+<div class="container">
+  <div class="breadgroup">
+    <a href="{% url 'patient:agenda' %}" class="item-1" style="text-decoration: none;">
+      <img src="{% static 'assets/icons/diary_small_blue.png' %}" alt="...">
+      <p>Agenda Do Dia <small>/</small></p>
+    </a>
+    <div class="item-2">
+      <img src="{% static 'assets/icons/note_pencil_small_gray.png' %}" alt="">
+      <p>Atualizar Agendamento</p>
+    </div>
+  </div>
+
+  <h1>Atualizar Agendamento</h1>
+
+  <div class="container_inputs">
+    {{ form.errors }}
+    <form method="post">
+      {% csrf_token %}
+
+      <div>
+        {{ form.speciality.label_tag }}
+        {{ form.speciality }}
+      </div>
+
+      <div class="field_date">
+        {{ form.date.label_tag }}
+        {{ form.date }}
+      </div>
+
+      <div class="field_time">
+        {{ form.hour.label_tag }}
+        {{ form.hour }}
+      </div>
+
+      <div class="description">
+        {{ form.description.label_tag }}
+        {{ form.description }}
+      </div>
+
+      <button type="submit">
+
+          Atualizar
+
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock Main_Patient %}
+
+{% comment %} {% block ModalContent %}
+
+{% include 'components/modals/01_modal.html' %}
+
+{% endblock ModalContent %}
+
+
+{% block ModalContent_fourth %}
+
+{% include 'components/modals/02_detalhes.html' %}
+
+{% endblock ModalContent_fourth %} {% endcomment %}

@@ -1,0 +1,64 @@
+@import "../../../global/colors";
+@import "../../../global/fonts";
+
+#modal-dialog-profile {
+  position: absolute;
+  right: 10px;
+  top: 50px;
+  right: 70px;
+}
+
+#modal-content-profile {
+  background-color: $blue_primary;
+  width: 210px;
+  /* height: 275px; */
+}
+
+#modal-header-profile {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+#modal-footer-profile {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.screen_profile_head p:nth-of-type(1) {
+  color: #fff;
+  margin: 0;
+}
+
+.screen_profile_head p:nth-of-type(2) {
+  color: #fff;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.screen_profile_main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.screen_profile_main p {
+  margin: 0;
+  color: #fff;
+}
+
+.screen_profile_main a {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 12px;
+  text-decoration: none;
+}
+
+.screen_profile_footer a {
+  background-color: transparent;
+  font-weight: bold;
+  color: $yellow_primary;
+  text-decoration: none;
+}
+
+.screen_profile_footer a:hover {
+  color: $yellow_primary;
+}

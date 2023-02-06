@@ -1,0 +1,106 @@
+:root {
+  --yellow_primary: #ffb800;
+  --white_primary: #fff;
+  --yellow_100: #fff7e5;
+  --red_300: #e45038;
+}
+
+.container-modal-not-found-patient {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body4 {
+  font-family: "Poppins";
+  box-sizing: border-box;
+  width: 507px;
+  height: 348px;
+  background: var(--yellow_100);
+  border: 2px solid var(--red_300);
+  border-radius: 38px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.fechar img {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.paciente_n_cadastrado h1 {
+  width: 420px;
+  height: 30px;
+  font-family: "Poppins";
+  white-space: nowrap;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 33px;
+  line-height: 30px;
+  margin-top: -4%;
+  color: #f0645b;
+  margin-bottom: -13px;
+  text-align: center;
+}
+
+.realizar_cadastro {
+  width: 339px;
+  height: 30px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  color: #000000;
+  margin-top: -1%;
+}
+
+.realizar_cadastro p {
+  text-align: center;
+}
+
+.yes-no {
+  width: 66%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: -4%;
+}
+
+.yes-no button {
+  box-sizing: border-box;
+  width: 122px;
+  height: 49.26px;
+  /* yellow - 100 */
+  background: var(--yellow_100);
+  /* YELLOW */
+  border: 0.987597px solid var(--yellow_primary);
+  box-shadow: 0px 11.8512px 20.7395px 3.95039px rgba(68, 97, 242, 0.15);
+  border-radius: 9.87597px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 30px;
+  color: var(--yellow_primary);
+  cursor: pointer;
+}
+
+.yes-no-btn:nth-of-type(1) {
+  background-color: var(--yellow_primary);
+  color: var(--white_primary);
+}
+
+.yes-no-btn:nth-of-type(1):hover {
+  border: 1px solid var(--yellow_primary);
+}
+.yes-no-btn:nth-of-type(2):hover {
+  border: 1px solid var(--white_primary);
+}
+/* .yes-no-btn {
+  border: none;
+  border-radius: 100%;
+} */

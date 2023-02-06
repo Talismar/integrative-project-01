@@ -1,0 +1,147 @@
+{% extends 'clinic/base.html' %}
+{% load static %}
+{% block title %}
+Detalhes Do Paciente
+{% endblock title %}
+
+{% block style %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'detalhes_paciente/css/style.css' %}"
+/>
+{% endblock style %} {% block Main %}
+
+<div class="container">
+  <div class="breadgroup">
+    <a href="{% url 'clinic:agenda_01' %}" class="item-1" style="text-decoration: none;">
+      <img src="{% static 'assets/icons/diary_small_blue.png' %}" alt="...">
+      <p>Agenda Do Dia <small>/</small></p>
+    </a>
+    <div class="item-2">
+      <img src="{% static 'assets/icons/details-small-gray.svg' %}" alt="...">
+      <p>Detalhes do Paciente</p>
+    </div>
+  </div>
+
+  <div class="info_user">
+    <div class="photo_patient">
+      {% if data.matriculation.photo %}
+      <img src="{{ data.matriculation.photo.url }}" alt="Profile"
+        style="width: 156px;
+               height: 156px;
+               object-fit: cover;
+               border-radius: 50%;
+               " />
+
+      {% endif %}
+    </div>
+
+    <div class="icons-whattsapp-email">
+      <a href="https://api.whatsapp.com/send/?phone={{ phone_number }}" target="_blank">
+        <img src="{% static 'assets/icons/whatsapp-small-gray.svg' %}" alt="...">
+      </a>
+
+      <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank">
+        <img src="{% static 'assets/icons/email-small-gray.svg' %}" alt="...">
+      </a>
+    </div>
+
+    <div class="data-person">
+      <div class="item">
+        <strong>Email</strong>
+        <p>{{ data.matriculation.email }}</p>
+      </div>
+
+      <div class="item">
+        <strong>CPF</strong>
+        <p>{{ data.matriculation.cpf }}</p>
+      </div>
+
+      {% comment %} <div class="item">
+        <strong>Matricula</strong>
+        <p>{{ data.matriculation.username }}</p>
+      </div> {% endcomment %}
+
+      <div class="item">
+        <strong>Idade</strong>
+        <p>{{ data.matriculation.birth_date|timesince|slice:":2" }}</p>
+      </div>
+
+      <div class="item">
+        <strong>Categoria</strong>
+        <p>
+          {% if data.matriculation.groups.all.0.name == "Admin" or data.matriculation.groups.all.0.name == "Employee" %}
+
+            Funcionário
+            {% else %}
+              Paciente
+
+          {% endif %}
+        </p>
+      </div>
+
+      <div class="item">
+        <strong>Agendado por</strong>
+        <p>{{ data.scheduled_by.name }}</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="info_patient">
+    {% comment %} <h1>Novo Agendamento</h1> {% endcomment %}
+
+    <div class="registro_scheduling">
+
+      <h2>Registro do agendamento</h2>
+
+      <div class="left">
+        <div class="item-left">
+          <strong>Número:</strong>
+          <p>{{ data.pk }}</p>
+        </div>
+
+        <div class="item-left">
+          <strong>Especialidade:</strong>
+          <p>{{ data.speciality }}</p>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="item-right">
+          <strong>Data:</strong>
+          <p>{{ data.date }}</p>
+        </div>
+
+        <div class="item-right">
+          <strong>Hora:</strong>
+          <p>{{ data.hour }}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="description_patient">
+      <h2>Descrição do paciente</h2>
+
+      <div class="data">
+        <p>
+          {{ data.description }}
+        </p>
+      </div>
+
+    </div>
+
+
+    <form action="{% url 'clinic:cancel_schedule' %}" method="post">
+      {% csrf_token %}
+      <input type="hidden" name="pk" value="{{ data.pk }}">
+
+      <button type="submit" {% if data.status.name == 'Cancelado' %}disabled {% endif %}>
+        CANCELAR AGENDAMENTO
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock Main %}

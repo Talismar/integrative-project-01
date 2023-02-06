@@ -1,0 +1,258 @@
+@import "../../../../../static/global/colors";
+@import "../../../../../static/global/fonts";
+
+.container_ADM {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 24px;
+
+  /* Buttom Salvar */
+  > a > button {
+    height: 60px;
+    padding: 0px 70px;
+
+    border: none;
+    border-radius: 5px;
+    background-color: $yellow_primary;
+    color: $white_primary;
+    margin-bottom: 24px;
+
+    font: {
+      family: "Source Sans Pro", sans-serif;
+      size: 32px;
+      weight: bold;
+    }
+  }
+}
+
+.container_configADM {
+  background-color: $white_primary;
+  min-width: 1330px;
+
+  // margin:0 35px;
+  padding-bottom: 35px;
+
+  border-radius: 6px;
+
+  /* Header Settings */
+  .setting_options_ADM {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 32px;
+
+    // background-color: aqua;
+
+    /* Container Buttons Configurações do sistema e Lista de Usuarios */
+    div {
+      margin-top: 16px;
+
+      a button:nth-of-type(1) {
+        margin-right: 16px;
+      }
+
+      a button {
+        height: 70px;
+        border: none;
+        padding: 0px 48px;
+        border-radius: 5px;
+
+        font: {
+          family: "Source Sans Pro", sans-serif;
+          size: 24px;
+          weight: 600;
+        }
+      }
+
+      .btnListUser {
+        background-color: $yellow_100;
+        border: 1.5px solid $yellow_primary;
+        color: $yellow_primary;
+      }
+
+      .btnSysSetting {
+        background-color: $yellow_primary;
+        color: $white_primary;
+      }
+    }
+  }
+}
+
+.container_inputs {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  // margin: 0px 22px;
+
+  form {
+    display: flex;
+    gap: 25px;
+    margin-top: 38px;
+
+    /* Global */
+    label {
+      font: {
+        family: "Source Sans Pro", sans-serif;
+        size: 24px;
+        weight: 600;
+      }
+    }
+
+    input,
+    textarea {
+      border-radius: 5px;
+      border: 1px solid $yellow_primary;
+      background: $yellow_100;
+      height: 60px;
+
+      font: {
+        size: 20px;
+        weight: 400;
+      }
+
+      padding-left: 24px;
+    }
+
+    .item-left {
+      min-width: 620px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      // background-color: burlywood;
+
+      div {
+        display: flex;
+        flex-direction: column;
+
+        .telefone {
+          display: flex;
+          flex-direction: row;
+          gap: 24px;
+
+          input {
+            flex-grow: 1;
+          }
+
+          select {
+            width: 146px;
+          }
+        }
+
+        &.description {
+          textarea {
+            height: 172px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+          }
+        }
+
+        select {
+          border-radius: 5px;
+          border: 1px solid $yellow_primary;
+          background: $yellow_100;
+          height: 60px;
+          font-size: 20px;
+          font-weight: 400;
+          padding-left: 24px;
+
+          appearance: none;
+          background-image: url("../../../../static/assets/icons/check_small_yellow.svg");
+          background-repeat: no-repeat;
+          background-position: right 24px top 22px;
+        }
+      }
+    }
+
+    .item-right {
+      min-width: 620px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      // background-color: yellowgreen;
+
+      div {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hour-per-period {
+        margin-top: 70px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .select_period {
+          // background-color: red;
+
+          display: flex;
+          flex-direction: row;
+          // gap: 48px;
+
+          div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+
+            margin-top: 6px;
+            margin-left: 21px;
+
+            input[type="checkbox"] {
+              height: 24px;
+              width: 24px;
+            }
+          }
+        }
+
+        .field-time-small {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+
+          .line-inputs {
+            display: flex;
+            flex-direction: row;
+
+            gap: 24px;
+
+            div {
+              flex-grow: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 
+  Removendo os icones padrão e adicionando personalizados nos inputs
+*/
+.field_date input::-webkit-calendar-picker-indicator {
+  filter: invert(57%) sepia(98%) saturate(479%) hue-rotate(1deg)
+    brightness(109%) contrast(101%);
+  margin-right: 21px;
+}
+
+// .field_date input {
+//   background-image: url("../../novoAgendamentoADM/imgs/calendar_icon.png");
+//   background-position: right 24px top 18px;
+//   background-repeat: no-repeat;
+// }
+
+.field_time input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(57%) sepia(98%) saturate(479%) hue-rotate(1deg)
+    brightness(109%) contrast(101%);
+  margin-right: 21px;
+}
+
+a {
+  text-decoration: none;
+}

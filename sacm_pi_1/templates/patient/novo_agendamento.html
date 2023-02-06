@@ -1,0 +1,78 @@
+{% extends 'patient/base.html' %}
+{% load static %}
+
+{% block Title %}
+Novo Agendamento
+{% endblock Title %}
+
+{% block Styles_Patient %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/novo_agendamento/style.css' %}"
+/>
+{% endblock Styles_Patient %}
+
+{% block Main_Patient %}
+
+<div class="container">
+  <div class="breadgroup">
+    <a href="{% url 'patient:agenda' %}" class="item-1" style="text-decoration: none;">
+      <img src="{% static 'assets/icons/diary_small_blue.png' %}" alt="...">
+      <p>Agenda Do Dia <small>/</small></p>
+    </a>
+
+    <div class="item-2">
+      <img src="{% static 'assets/icons/note_pencil_small_gray.png' %}" alt="...">
+      <p>Novo Agendamento</p>
+    </div>
+  </div>
+  <h1>Novo Agendamento</h1>
+
+  {{ form.errors}}
+  <div class="container_inputs">
+    <form method="post">
+      {% csrf_token %}
+
+      <div class="field_date">
+        {% comment %}
+          <form action="{% url 'novo_agendamento_paciente' %}" method="get">
+
+          </form>
+        {% endcomment %}
+        {{ form.date.label_tag }}
+        <input type="date" name="date" id="id_date" value="{{ form.date.value }}">
+
+      </div>
+
+      <div>
+        {{ form.speciality.label_tag }}
+        {{ form.speciality }}
+      </div>
+
+      {% comment %} <div class="field_date">
+        {{ form.date.label_tag }}
+        {{ form.date }}
+      </div> {% endcomment %}
+
+      <div class="field_time">
+        {{ form.hour.label_tag }}
+        {{ form.hour }}
+      </div>
+
+      <div class="description">
+        {{ form.description.label_tag }}
+        {{ form.description }}
+      </div>
+
+      <button type="submit">
+
+          Agendar
+
+      </button>
+    </form>
+  </div>
+</div>
+
+
+{% endblock Main_Patient %}

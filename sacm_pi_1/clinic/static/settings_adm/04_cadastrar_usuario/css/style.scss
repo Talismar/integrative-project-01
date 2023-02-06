@@ -1,0 +1,144 @@
+@import "../../../../../static/global/colors";
+@import "../../../../../static/global/fonts";
+
+.container-cadastrar-usuario {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 24px 0px;
+
+  /* Global */
+  font-family: "Source Sans Pro", sans-serif;
+
+  > a {
+    width: 326px;
+  }
+}
+
+.flex-header-container-inputs {
+  background-color: $white_primary;
+
+  padding: 0px 32px;
+  padding-bottom: 35px;
+
+  border-radius: 6px;
+
+  hr {
+    margin: 0;
+  }
+
+  /* h1 e icon usuario */
+  .flex-container-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+      font-weight: 600;
+    }
+  }
+}
+
+.grid-container-inputs-setting-users {
+  display: grid;
+  grid-template-columns: 620px 620px;
+  column-gap: 24px;
+  margin-top: 1.5rem;
+
+  /* Global */
+  label {
+    font: {
+      family: "Source Sans Pro", sans-serif;
+      size: 24px;
+      weight: 600;
+    }
+  }
+
+  /* INPUTS AND LABELS */
+  .flex-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .item-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+
+    .foto-profile {
+      display: flex;
+      flex-direction: row;
+      gap: 32px;
+      align-items: flex-end;
+
+      div:nth-of-type(1) {
+        h3 {
+          font-size: 24px;
+          font-weight: 600;
+        }
+
+        /* Simulando foto do perfil */
+        .circle-profile {
+          width: 139px;
+          height: 139px;
+          background: $yellow_100;
+          border-radius: 50%;
+        }
+      }
+
+      /* Botão CARREGAR FOTO */
+      a {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+
+    .telefone {
+      display: grid;
+      grid-template-columns: 107px auto;
+      column-gap: 1.5rem;
+    }
+  }
+
+  .item-right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .grid-item {
+      display: grid;
+      grid-template-columns: repeat(2, calc(50% - 6px));
+      column-gap: 12px;
+    }
+  }
+}
+
+.flex-item-radio {
+  display: flex;
+  gap: 12px;
+}
+
+.errorlist {
+  background-color: transparent;
+  justify-content: flex-start;
+  height: auto;
+  flex-direction: column;
+  align-items: flex-start;
+
+  li {
+    color: $red_400;
+
+    .errorlist {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      li {
+        color: black;
+      }
+    }
+  }
+}

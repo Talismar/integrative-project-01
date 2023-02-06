@@ -1,0 +1,72 @@
+/* Fonts */
+@import "./../../../global/fonts";
+@import "../../../global/colors";
+
+#modal-content-cancel {
+  display: flex;
+  align-items: center;
+}
+
+#modal-body-cancel {
+  padding: 0;
+}
+
+.container_modal01 {
+  background-color: $white_primary;
+
+  width: 653px;
+  height: 321px;
+
+  border: 1px solid $yellow_primary;
+  border-radius: 32px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 85px 50px 60px 50px;
+
+  p {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 50px;
+    text-align: center;
+    color: #f0645b;
+    padding-bottom: 15px;
+  }
+
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 34px;
+
+    input {
+      box-shadow: 0px 11.8512px 20.7395px 3.95039px rgba(68, 97, 242, 0.15);
+      height: 50px;
+      width: 122px;
+      border-radius: 10px;
+
+      font: {
+        family: "Poppins", sans-serif;
+        size: 27px;
+      }
+    }
+
+    input:nth-of-type(1) {
+      background-color: $white_primary;
+      border: 1px solid $yellow_primary;
+      color: $yellow_primary;
+    }
+
+    form {
+      input {
+        background-color: $yellow_primary;
+        color: $white_primary;
+        border: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{% extends 'account/base.html' %}
+{% load static %}
+{% block title %}SACM - PI{% endblock title %}
+
+{% block style %}
+
+<link rel="stylesheet" href="{% static 'css/index/style.css' %}" />
+
+{% endblock style %}
+
+{% block Body %}
+
+  <!--HEADER-->
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a class="logo" href="#">
+            <img
+              src="{% static 'assets/imgs/logo_small.png' %}"
+              alt="Logo Do Sistema"
+            />
+          </a>
+        </li>
+        <li>
+          {% comment %} <a href="{% url 'login' %}"></a> {% endcomment %}
+          {% if not request.user.is_authenticated %}
+          <a href="{% url 'users:login' %}">Login</a>
+          {% endif %}
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <img src="{% static 'assets/imgs/sigla_big_white.png' %}" alt="Sigla Do sistema" />
+
+    <h1>
+      Sistema de Agendamento <br />
+      de <span style="color: white">Consultas Médicas</span>
+    </h1>
+  </main>
+
+  <footer>
+    <p>Copyright &copy; 2022</p>
+    <p>Desenvolvido por alunos do IFRN - 2022 | Made with Django</p>
+  </footer>
+
+{% endblock Body %}

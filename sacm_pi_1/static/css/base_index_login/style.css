@@ -1,0 +1,10 @@
+/* define variables */
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to right, #0098b9, #fff);
+  font-family: "Poppins", sans-serif;
+}/*# sourceMappingURL=style.css.map */

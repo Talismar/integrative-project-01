@@ -1,0 +1,110 @@
+@import "../../../global/colors";
+@import "../../../global/fonts";
+
+#modal-dialog-details-clinic-doctor {
+  display: flex;
+  justify-content: center;
+}
+
+#modal-content-details-clinic-doctor {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+#modal-body-details-clinic-doctor {
+  padding: 0;
+}
+
+.container-modal-details-patient {
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.header-modal-details-patient {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: $yellow_100;
+  padding: 21px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  h2 {
+    margin: 8px 0;
+    font-weight: 700;
+    color: $yellow_primary;
+    font-size: 36px;
+  }
+
+  button {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+  }
+}
+
+.content-modal-details-patient {
+  display: grid;
+  grid-template-areas: "item1 item2";
+  column-gap: 170px;
+}
+
+.item-modal-details-patient-1 {
+  grid-area: item1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 2.5rem;
+
+  div.img-with-text {
+    p {
+      margin: 0;
+    }
+    div {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+  }
+}
+
+.item-modal-details-patient-2 {
+  grid-area: item2;
+  margin: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  h3 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  div.img-with-text {
+    p {
+      margin: 0;
+    }
+    div {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+  }
+
+  div div.name-photo-doctor {
+    display: grid;
+    grid-template-columns: 425px 156px;
+    column-gap: 114px;
+
+    div.doctor_photo {
+      position: relative;
+      top: -60px;
+      width: 156px;
+      height: 156px;
+      background-color: $yellow_100;
+      border-radius: 100%;
+    }
+  }
+}

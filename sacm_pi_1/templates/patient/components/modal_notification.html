@@ -1,0 +1,111 @@
+{% load static %}
+
+<!-- Modal Notification -->
+<div
+class="modal fade"
+id="ModalNotificationPatient"
+tabindex="-1"
+aria-labelledby="exampleModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog" id="modal-dialog-notification">
+
+  <div class="modal-content" id="modal-content-notification">
+
+    <div class="modal-body" id="modal-body-notification">
+      <div class="container-notification">
+
+        <div class="container-item-notification">
+          {% if user.photo %}
+
+            <img src="{{user.photo.url}}" style="width: 56px;
+            height: 56px;
+            object-fit: cover;
+            border-radius: 50%;
+            " alt="..." />
+          {% else %}
+          <img src="{% static 'assets/icons/person_black.svg' %}" alt="..." />
+          {% endif %}
+
+          <div class="item-notification">
+
+            {% for item in notification %}
+
+              {% if not item.status.name == 'Concluído' %}
+
+
+              <div class="header-item-notification">
+                <div class="row-info-notification">
+                  <strong>{{ item.scheduled_by }}&nbsp;</strong>
+                  <p>&bull;</p>
+                  <p>&nbsp;{{ item.updated_at }}</p>
+                </div>
+
+                <p class="{% if item.status.name == 'Cancelado' %}
+                type-cancel{% endif %}">
+                  {% if item.status.name == 'Pendente' %}
+                    Novo Agendamento
+                  {% else %}
+                  {{ item.status.name }}
+                  {% endif %}
+                </p>
+              </div>
+
+              <div class="message-notification">
+                {% if item.status.name == 'Pendente' %}
+                  <p>Nova consulta agendada no setor de {{ item.id_system.speciality }}</p>
+                  <p>Dia da consulta {{ item.date }} às {{ item.hour }}.</p>
+                {% else %}
+                <p>{{ item.cancellation_message }}.</p>
+                {% comment %} <p>Dia da consulta 28/12/2022 às 11:00 am.</p> {% endcomment %}
+                {% endif %}
+              </div>
+              <div class="bar-horizontal" style="margin-left: -65px; width: 340px"></div>
+              {% endif %}
+
+              {% if item.status.name == 'Concluído' %}
+              Não possui notificação
+              {% endif %}
+            {% endfor %}
+          </div>
+
+        </div>
+
+        {% comment %} <div class="bar-horizontal"></div>
+
+        <div class="container-item-notification">
+
+          <img src="{% static '/assets/icons/modals/icone.svg'%}" alt="..." />
+
+          <div class="item-notification">
+
+            <div class="header-item-notification">
+              <div class="row-info-notification">
+                <strong>Dr. Antonio penaforte&nbsp;</strong>
+                <p>&bull;</p>
+                <p>&nbsp;1 hora atrás</p>
+              </div>
+
+              <p class="type-cancel">Cancelado</p>
+            </div>
+
+            <div class="message-notification">
+              <p>Nova consulta agendada no setor de fisioterapia.</p>
+              <p>Dia da consulta 28/12/2022 às 11:00 am.</p>
+            </div>
+          </div>
+
+        </div> {% endcomment %}
+
+        {% comment %} <div class="bar-horizontal"></div> {% endcomment %}
+
+        <a class="btn-limpar-tudo" href="#" data-bs-dismiss="modal">
+          {% comment %} LIMPAR TUDO {% endcomment %}
+          FECHAR
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>

@@ -1,0 +1,22 @@
+<!-- Modal -->
+<div class="modal fade" id="cancelScheduleModal_{{ i.pk }}" tabindex="-1" aria-labelledby="cancelScheduleModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" id="custom-modal-content-cancelScheduleModal">
+      <div class="modal-body" id="custom-modal-body-cancelScheduleModal">
+        <h1>Tem certeza que deseja cancelar
+          este agendamento?</h1>
+
+        <div>
+
+          <button type="button" class="btn" data-bs-dismiss="modal">Não</button>
+          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#sendMessageCancelModal_{{ i.pk }}">Sim</button>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+{% include 'clinic/components/modal_send_message_cancel.html' %}

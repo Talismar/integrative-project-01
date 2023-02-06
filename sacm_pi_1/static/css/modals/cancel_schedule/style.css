@@ -1,0 +1,41 @@
+#custom-modal-content-cancelScheduleModal {
+  background-color: #fff7e5;
+  border-color: red;
+  border-radius: 32px;
+}
+
+#custom-modal-body-cancelScheduleModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#custom-modal-body-cancelScheduleModal h1 {
+  font-size: 33px;
+  padding: 69px 18px 50px 18px;
+  margin: 0;
+  font-weight: 400;
+  color: #f0645b;
+  text-align: center;
+}
+
+#custom-modal-body-cancelScheduleModal div {
+  padding-bottom: 44px;
+  display: flex;
+  gap: 44px;
+}
+
+#custom-modal-body-cancelScheduleModal button:nth-of-type(1) {
+  background-color: transparent;
+  color: #ffb800;
+  border: 1px solid #ffb800;
+  width: 122px;
+}
+
+#custom-modal-body-cancelScheduleModal button:nth-of-type(2) {
+  background-color: #ffb800;
+  color: #fff;
+  border: none;
+  width: 122px;
+}/*# sourceMappingURL=style.css.map */

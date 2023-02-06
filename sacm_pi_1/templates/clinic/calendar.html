@@ -1,0 +1,157 @@
+{% extends 'clinic/base_calendar.html' %}
+{% load static %}
+
+{% block title %}Calendário{% endblock title %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'calendario/css/style.css' %}">
+{% endblock style %}
+
+{% block Main %}
+
+<div class="container-calendar">
+
+  <div class="container-header-calendar">
+    <div class="title-year-month">
+      <h1>Calendário De Agendamentos</h1>
+
+
+      <form action="{% url 'clinic:calendario' %}" method="get" class="year_month">
+
+        {% comment %}
+        <select name="year" class="year">
+          {% for year in years %}
+            <option value="{{ year }}">{{ year }}</option>
+          {% endfor %}
+        </select>
+
+        <select name="month" class="month">
+          {% for month in months %}
+            <option value="{{month}}" >{{ month }}</option>
+          {% endfor %}
+        </select>
+        {% endcomment %}
+
+        <div>
+          <input type="month" name="month_year" class="input-month-calendar" value="{{month_year}}">
+        </div>
+
+        <input type="submit" value="BUSCAR" style="
+          border: none;
+          background: none;
+          align-self: flex-end;
+          font-size: 16px;
+          font-weight: bold;
+          border: 2px solid #ffb800;
+          color: #ffb800;
+          padding: 8px;
+          border-radius: 8px;
+        ">
+      </form>
+    </div>
+
+    <div class="legend">
+      <h3>Legenda:</h3>
+
+      <div class="color_n_text">
+        <div class="atendido"></div>
+        <p>Concluído</p>
+      </div>
+
+      <div class="color_n_text">
+        <div class="nao-atendido"></div>
+        <p>Pendente</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container-month">
+
+
+    <p class="gray_text">Segunda</p>
+    <p class="gray_text">Terça</p>
+    <p class="gray_text">Quarta</p>
+    <p class="gray_text">Quinta</p>
+    <p class="gray_text">Sexta</p>
+    <p>Sabado</p>
+    <p>Domingo</p>
+
+
+    {% for date, data in days %}
+
+      {% comment %} {% if not date.another_month.weekday == 6 and forloop.first %}
+
+      {% endif %}
+      {% if forloop.last %}
+      {% if forloop.counter == 42 %}
+        Talismar
+      {% endif %}
+
+      {% endif %} {% endcomment %}
+
+      <div class="container-days" {% if data.is_weekend %}style="background-color: #F6F6F6;"{% endif %}>
+        <div class="flex-1">
+          {% if date.current_month %}
+          <strong>{{ date.current_month.day }}</strong>
+            {% else %}
+          <strong style="color: rgba(0,0,0,.25)">{{ date.another_month.day }}</strong>
+            {% endif %}
+
+          {% if not data.is_weekend and not date.another_month %}
+          <div>
+            <form action="{% url 'clinic:agenda_01' %}" method="get">
+              <input type="hidden" name="new_schedule" value="{{ date.current_month.year }}-{{ date.current_month.month }}-{{ date.current_month.day }}">
+              <button type="submit" style="border: none;">
+                <img src="{% static 'assets/icons/calendar_gray_.svg' %}" alt="Calendar icon">
+              </button>
+            </form>
+
+            {% if date.current_month >= today %}
+
+              <form action="{% url 'clinic:novo_agendamento' %}" method="get">
+                <input type="hidden" name="new_schedule" value="{{ date.current_month.year }}-{{ date.current_month.month }}-{{ date.current_month.day }}">
+                <button type="submit" style="border: none;">
+                  <img src="{% static 'assets/icons/plus_.svg' %}" alt="Add icon">
+                </button>
+              </form>
+
+            {% endif %}
+          </div>
+          {% endif %}
+
+
+        </div>
+        {% if not data.is_weekend and not date.another_month %}
+
+          <div class="flex-2">
+            <h2>
+              {% if data.concluido > 0 %}
+                  {{ data.concluido }}
+                  {% else %}
+                  0
+              {% endif %}
+            </h2>
+            <h2>{% if data.pendente > 0 %}
+                  {{ data.pendente }}
+                  {% else %}
+                  0
+                {% endif %}
+            </h2>
+          </div>
+
+        {% endif %}
+      </div>
+
+  {% endfor %}
+
+  </div>
+
+</div>
+
+{% endblock Main %}
+
+{% block ModalContent_Relatorio %}
+
+{% include "clinic/components/modal_relatorio.html" %}
+
+{% endblock ModalContent_Relatorio %}

@@ -1,0 +1,32 @@
+{% load static %}
+<div class="container-modal-not-found-patient">
+
+  <div class="body4">
+    <div class="fechar">
+      <img src=" {% static '/assets/icons/modals/fechar_erro.svg' %}" alt="" />
+    </div>
+    <div class="paciente_n_cadastrado">
+      <h1>Paciente não cadastrado</h1>
+    </div>
+
+    <div class="realizar_cadastro">
+      <p>Deseja realizar o cadastro?</p>
+    </div>
+
+    <div class="yes-no">
+      <button class="yes-no-btn-1" onClick="closeModal()">
+        Não
+      </button>
+
+      <form method="GET" action="{% url 'clinic:novo_paciente' %}">
+        <input type="hidden" name="new_schedule" value="{{ new_schedule }}" />
+        <button class="yes-no-btn" type="submit">
+          SIM
+        </button>
+      </form>
+      </a>
+    </div>
+  </div>
+
+
+</div>

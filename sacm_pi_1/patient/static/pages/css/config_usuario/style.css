@@ -1,0 +1,249 @@
+/* define variables */ /* Fonts */
+/* Usada no Header only */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap");
+/* Source Sans Pro */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap");
+/* Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+/* Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/* Outfit */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+.container_ADM {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  align-items: flex-end;
+  /* Global */
+  font-family: "Source Sans Pro", sans-serif;
+  /* Buttom ATUALIZAR PERFIL */
+}
+.container_ADM #btn-submit-profile {
+  height: 60px;
+  padding: 0px 70px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffb800;
+  color: #fff;
+  align-self: flex-end;
+  margin-top: 8rem;
+  margin-right: -2rem;
+  margin-bottom: 1rem;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.container_configADM {
+  background-color: #fff;
+  min-width: 1330px;
+  height: 850px;
+  padding: 0px 32px;
+  padding-bottom: 35px;
+  border-radius: 6px;
+  /* Meu Perfil H1 */
+}
+.container_configADM h1 {
+  font-weight: 600;
+}
+.container_configADM hr {
+  margin: 0;
+}
+
+.container_inputs {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.container_inputs form {
+  display: flex;
+  gap: 25px;
+  margin-top: 38px;
+  /* Global */
+}
+.container_inputs form label {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+}
+.container_inputs form input,
+.container_inputs form textarea {
+  border-radius: 5px;
+  border: 1px solid #ffb800;
+  background: #fff7e5;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 400;
+  padding-left: 24px;
+}
+.container_inputs form .item-left {
+  min-width: 620px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.container_inputs form .item-left .foto-profile {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  align-items: flex-end;
+}
+.container_inputs form .item-left .foto-profile a {
+  display: none;
+}
+.container_inputs form .item-left .foto-profile div:nth-of-type(1) {
+  /* Simulando foto do perfil */
+}
+.container_inputs form .item-left .foto-profile div:nth-of-type(1) h3 {
+  font-size: 24px;
+  font-weight: 600;
+}
+.container_inputs form .item-left .foto-profile div:nth-of-type(1) .circle-profile {
+  width: 139px;
+  height: 139px;
+  background: #fff7e5;
+  border-radius: 50%;
+}
+.container_inputs form .item-left .foto-profile div:nth-of-type(2) {
+  display: flex;
+  height: 46px;
+  overflow: hidden;
+  flex-direction: row;
+}
+.container_inputs form .item-left .foto-profile div:nth-of-type(2) label:nth-of-type(1) {
+  display: none;
+}
+.container_inputs form .item-left .foto-profile div:nth-of-type(2) label:nth-of-type(2) {
+  height: 46px;
+  padding: 0 42px;
+  border-radius: 5px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  border: 1px solid #d20202;
+  color: #d20202;
+  background-color: #fff7e5;
+  cursor: pointer;
+  z-index: 5;
+  margin-right: -5px; /* Esconder os : que o Django colocar no  */
+}
+.container_inputs form .item-left .foto-profile div:nth-of-type(2) #photo-clear_id {
+  display: none;
+}
+.container_inputs form .item-left .foto-profile div:nth-of-type(2) #id_photo {
+  border: none;
+  background-color: transparent;
+}
+.container_inputs form .item-left .foto-profile div:nth-of-type(2) #id_photo::before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 46px;
+  width: 210px;
+  padding: 0 42px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 20px;
+  border: none;
+  color: #fff7e5;
+  background-color: #ffb800;
+}
+.container_inputs form .item-left .foto-profile div:nth-of-type(2) #id_photo::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.container_inputs form .item-left .foto-profile div:nth-of-type(2) #id_photo:hover::before {
+  border-color: black;
+}
+.container_inputs form .item-left .foto-profile div:nth-of-type(2) #id_photo:active {
+  outline: 0;
+}
+.container_inputs form .item-left .foto-profile div:nth-of-type(2) #id_photo:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+.container_inputs form .item-left div {
+  display: flex;
+  flex-direction: column;
+  /* Data de nascimento e CPF */
+}
+.container_inputs form .item-left div .telefone {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+.container_inputs form .item-left div .telefone input {
+  flex-grow: 1;
+}
+.container_inputs form .item-left div .telefone select {
+  width: 146px;
+}
+.container_inputs form .item-left div select {
+  border-radius: 5px;
+  border: 1px solid #ffb800;
+  background: #fff7e5;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 400;
+  padding-left: 24px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url("../../../../static/assets/icons/check_small_yellow.svg");
+  background-repeat: no-repeat;
+  background-position: right 24px top 22px;
+}
+.container_inputs form .item-left div .line-inputs {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+.container_inputs form .item-left div .line-inputs div {
+  flex-grow: 1;
+}
+.container_inputs form .item-right {
+  min-width: 620px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: -6px;
+}
+.container_inputs form .item-right .genero {
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+}
+.container_inputs form .item-right .genero div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-left: 21px;
+}
+.container_inputs form .item-right .genero div input[type=radio] {
+  height: 24px;
+  width: 24px;
+}
+.container_inputs form .item-right div {
+  display: flex;
+  flex-direction: column;
+}
+.container_inputs form .item-right div ul {
+  height: auto;
+  background-color: transparent;
+}
+.container_inputs form .item-right div ul li {
+  font-size: 24px;
+}
+.container_inputs form .item-right .change-passwd {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.container_inputs form .item-right .change-passwd h2 {
+  font-size: 32px;
+  font-weight: 600;
+}
+.container_inputs form .item-right .change-passwd hr {
+  margin-top: 30px;
+}/*# sourceMappingURL=style.css.map */

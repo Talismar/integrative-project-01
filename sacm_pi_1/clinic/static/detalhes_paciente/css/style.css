@@ -1,0 +1,196 @@
+/* define variables */ /* Fonts */
+/* Usada no Header only */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap");
+/* Source Sans Pro */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap");
+/* Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+/* Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/* Outfit */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+.container {
+  background-color: #fff;
+  display: grid;
+  grid-template-areas: "breadgroup breadgroup" "info-user info-agendamento";
+  grid-template-columns: 400px auto;
+  row-gap: 30px;
+  -moz-column-gap: 34px;
+       column-gap: 34px;
+  align-items: center;
+  padding: 32px !important;
+  border-radius: 24px;
+}
+.container .breadgroup {
+  grid-area: breadgroup;
+  padding-left: 32px;
+  height: 70px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  background-color: #fff7e5;
+  gap: 16px;
+}
+.container .breadgroup p {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  font-size: 20px;
+}
+.container .breadgroup .item-1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.container .breadgroup .item-1 p {
+  color: #036e85;
+}
+.container .breadgroup .item-1 p small {
+  color: #a9a9a9;
+}
+.container .breadgroup .item-2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.container .breadgroup .item-2 p {
+  color: #a9a9a9;
+}
+
+.info_user {
+  align-self: stretch;
+  grid-area: "info-user";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #fff7e5;
+}
+.info_user .photo_patient {
+  width: 156px;
+  height: 156px;
+  border-radius: 50%;
+  background-color: #ffe9b2;
+}
+.info_user .icons-whattsapp-email {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 24px;
+}
+.info_user .icons-whattsapp-email a {
+  display: grid;
+  height: 57px;
+  width: 57px;
+  background-color: #ffe9b2;
+}
+.info_user .icons-whattsapp-email a img {
+  justify-self: center;
+  align-self: center;
+}
+.info_user .data-person {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  font-family: "Poppins", sans-serif;
+}
+.info_user .data-person .item {
+  align-self: center;
+  text-align: center;
+}
+.info_user .data-person strong {
+  text-align: center;
+  font-weight: 600;
+  font-size: 24px;
+}
+.info_user .data-person p {
+  color: #455a64;
+  margin: 0px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.info_patient {
+  display: grid;
+  row-gap: 24px;
+}
+.info_patient h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+.info_patient h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+}
+.info_patient .registro_scheduling {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+}
+.info_patient .registro_scheduling h2 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.info_patient .registro_scheduling .left {
+  border-start-start-radius: 20px;
+  border-end-start-radius: 20px;
+}
+.info_patient .registro_scheduling .right {
+  border-top-right-radius: 20px;
+  border-end-end-radius: 20px;
+}
+.info_patient .registro_scheduling .left,
+.info_patient .registro_scheduling .right {
+  background-color: #fff7e5;
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  padding: 24px;
+}
+.info_patient .registro_scheduling .left .item-left strong,
+.info_patient .registro_scheduling .left .item-right strong,
+.info_patient .registro_scheduling .right .item-left strong,
+.info_patient .registro_scheduling .right .item-right strong {
+  color: #ffb800;
+  font-weight: 600;
+}
+.info_patient .registro_scheduling .left .item-left p,
+.info_patient .registro_scheduling .left .item-right p,
+.info_patient .registro_scheduling .right .item-left p,
+.info_patient .registro_scheduling .right .item-right p {
+  margin: 0;
+  font-weight: 500;
+}
+.info_patient .description_patient .data {
+  height: 350px;
+  background-color: #fff7e5;
+  border-radius: 20px;
+  padding: 34px;
+}
+.info_patient .description_patient .data p {
+  color: #455a64;
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+.info_patient form {
+  justify-self: flex-end;
+}
+.info_patient form button {
+  border: none;
+  border-radius: 4px;
+  background-color: #d20202;
+  color: #fff;
+  width: 406px;
+  height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 2s;
+  font-weight: 600;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 24px;
+}
+.info_patient form button:hover {
+  background-color: #f0645b;
+  color: #fff;
+}/*# sourceMappingURL=style.css.map */

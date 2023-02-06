@@ -1,0 +1,148 @@
+@charset "UTF-8";
+/* define variables */ /* Fonts */
+/* Usada no Header only */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap");
+/* Source Sans Pro */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap");
+/* Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+/* Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/* Outfit */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+.box_container {
+  width: 1371px;
+  background-color: #fff;
+  border-radius: 25px;
+}
+.box_container .circle_container {
+  position: absolute;
+}
+.box_container .circle_container .circle {
+  width: 80px;
+  height: 88px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: relative;
+  top: 98px;
+  left: -40px;
+}
+.box_container .circle_container .circle img {
+  margin: 16px;
+}
+.box_container .box_header {
+  width: 100%;
+  margin: 16px 0px;
+  /* Header Settings */
+}
+.box_container .box_header .setting_options_ADM {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 46px;
+  /* Container Buttons Configurações do sistema e Lista de Usuarios */
+  /* Button CADASTRAR NOVO USUARIO */
+}
+.box_container .box_header .setting_options_ADM a button {
+  height: 70px;
+  border: none;
+  padding: 0px 48px;
+  border-radius: 5px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+}
+.box_container .box_header .setting_options_ADM div a button:nth-of-type(1) {
+  margin-right: 16px;
+}
+.box_container .box_header .setting_options_ADM div .btnListUser {
+  background-color: #ffb800;
+  color: #fff;
+}
+.box_container .box_header .setting_options_ADM div .btnSysSetting {
+  background-color: #fff7e5;
+  border: 1.5px solid #ffb800;
+  color: #ffb800;
+}
+.box_container .box_header .setting_options_ADM > a {
+  text-decoration: none;
+}
+.box_container .box_header .setting_options_ADM > a button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #fff7e5;
+  border: 1.5px solid #ffb800;
+  color: #ffb800;
+}
+.box_container .box_main {
+  font-family: "Poppins", sans-serif;
+}
+.box_container .box_main .table_diary {
+  background-color: #fff7e5;
+  margin: 0px 46px;
+  border-radius: 10px;
+  border: 1px solid #ffb800;
+  padding: 42px 20px 0 20px;
+  height: 660px;
+}
+.box_container .box_main .table_diary table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 6px;
+  font-size: 32px;
+}
+.box_container .box_main .table_diary table tr {
+  height: 69px;
+}
+.box_container .box_main .table_diary table th,
+.box_container .box_main .table_diary table td {
+  padding: 10px;
+}
+.box_container .box_main .table_diary table thead tr > th {
+  color: #ffb800;
+  font-weight: bold;
+  text-align: start;
+}
+.box_container .box_main .table_diary table tbody tr.check {
+  background-color: #ffe9b2;
+}
+.box_container .box_main .table_diary table tbody tr {
+  background-color: #fff;
+  border: 1px #ffb800 solid;
+}
+.box_container .box_main .table_diary table .action {
+  height: 69px;
+  display: flex;
+  gap: 24px;
+}
+.box_container .box_main .table_diary table .action button {
+  border: none;
+  background-color: inherit;
+}
+.box_container .box_main .table_diary table tr td {
+  border-bottom: 1px solid #ffb800;
+  border-top: 1px solid #ffb800;
+}
+.box_container .box_main .table_diary table tr td:nth-of-type(1) {
+  border-left: 1px solid #ffb800;
+}
+.box_container .box_main .table_diary table tr td:nth-of-type(4) {
+  border-right: 1px solid #ffb800;
+}
+.box_container .box_main .pagination {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0;
+}
+.box_container .box_main .pagination a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.box_container .box_main .pagination .active {
+  background-color: #ffb800;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+}/*# sourceMappingURL=style.css.map */

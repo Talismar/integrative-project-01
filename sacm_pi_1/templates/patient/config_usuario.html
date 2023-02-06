@@ -1,0 +1,209 @@
+{% extends 'patient/base.html' %}
+{% load static %}
+
+{% block Title %}Meu Perfil{% endblock Title %}
+
+{% block Styles_Patient %}
+<link rel="stylesheet" type="text/css" href="{% static 'pages/css/config_usuario/style.css' %}">
+
+{% if form.photo.value %}
+<style>
+  #id_photo::before {
+    content: "ALTERAR FOTO";
+  }
+</style>
+{% else %}
+<style>
+  #id_photo::before {
+    content: "SELECIONAR FOTO";
+  }
+</style>
+{% endif %}
+{% endblock Styles_Patient %}
+
+{% block Main_Patient %}
+
+<div class="container_ADM" >
+
+  <div class="container_configADM" >
+
+    <div>
+      <h1>Meu Perfil</h1>
+    </div>
+
+    <hr>
+
+    <div class="container_inputs">
+      <div style="position: absolute;">
+        {{ password_form.errors }}
+        {{ form.errors }}
+      </div>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="item-left">
+          <div class="foto-profile">
+
+            <div>
+              <h3>Foto</h3>
+              <div class="circle-profile">
+                {% if form.photo.value %}
+                  <img src="{{ form.photo.value.url }}" alt="..."
+                            style="width: 156px;
+                            height: 156px;
+                            object-fit: cover;
+                            border-radius: 50%;
+                            "
+                  />
+                {% endif %}
+              </div>
+            </div>
+
+            <div>
+              {{ form.photo.label_tag }}
+              {{ form.photo }}
+            </div>
+
+          </div>
+
+          <script>
+            const changeColorWhenClicked = document.querySelector('label[for="photo-clear_id"]')
+            let father = changeColorWhenClicked.parentElement.innerHTML
+
+            father = father.replace('Currently', '')
+            father = father.replace("Change", "")
+            father = father.replace(': ', "")
+            father = father.replace('', "")
+            father = father.replace('<br>', '')
+
+            changeColorWhenClicked.parentElement.innerHTML = father
+
+          </script>
+
+          <div>
+            {% comment %} <label for="name">Nome:</label>
+            <input type="text" placeholder="Nome..." value="{{ form.name }}" disabled/> {% endcomment %}
+            {{form.name.label_tag}}
+            {{form.name}}
+          </div>
+
+          <div>
+            {% comment %} <label for="id_email">E-mail:</label> {% endcomment %}
+            {% comment %} <input type="email" id="id_email" placeholder="Email..." value="{{ form.email }}"/> {% endcomment %}
+            {{form.email.label_tag}}
+            {{form.email}}
+          </div>
+
+          <div>
+            {% comment %} <label for="id_phone_number">Telefone:</label>
+            <input type="text" id="id_phone_number" placeholder="Telefone..." value="{{ form.phone_number }}"> {% endcomment %}
+            {{form.phone_number.label_tag}}
+            {{form.phone_number}}
+          </div>
+
+          <div>
+            {% comment %} <label for="id_username">Matrícula:</label>
+            <input type="text" id="id_username" value="{{ form.username }}" disabled /> {% endcomment %}
+            {{form.username.label_tag}}
+            {{form.username}}
+          </div>
+
+          <div>
+
+            <div class="line-inputs">
+
+              <div>
+                {% comment %} <label for="id_birth_date">Data de nascimento</label>
+                <input type="date" id="id_birth_date" value="{{ form.birth_date|date:"Y-m-d" }}" disabled> {% endcomment %}
+                {{form.birth_date.label_tag}}
+                {{form.birth_date}}
+              </div>
+
+              <div>
+                {% comment %} <label for="id_cpf">CPF</label> {% endcomment %}
+                {% comment %} <input type="text" id="id_cpf" value="{{ form.cpf }}" disabled> {% endcomment %}
+                {{form.cpf.label_tag}}
+                {{form.cpf}}
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="item-right">
+
+          <div>
+
+              {{ form.gender.label_tag }}
+              <div class="genero">
+
+                <div>
+                  {{ form.gender.0.tag }}
+                  <label for="id_gender_0">
+                    {{ form.gender.0.choice_label }}
+                  </label>
+                </div>
+
+                <div>
+                  {{ form.gender.1.tag }}
+                  <label for="id_gender_1">
+                    {{ form.gender.1.choice_label }}
+                  </label>
+                </div>
+
+            </div>
+          </div>
+
+          <div>
+            <label for="category__">Categoría do usuário</label>
+            <ul>
+              <li>Paciente</li>
+            </ul>
+          </div>
+
+
+           <div class="change-passwd">
+
+            <hr>
+
+            <h2 style="margin-top: 24px;">Alterar a Senha</h2>
+
+            <div>
+              {{ password_form.old_password.label_tag }}
+              {{ password_form.old_password }}
+            </div>
+
+            <div>
+              {{ password_form.new_password1.label_tag }}
+              {{ password_form.new_password1 }}
+            </div>
+
+            <div>
+              {{ password_form.new_password2.label_tag }}
+              {{ password_form.new_password2 }}
+            </div>
+
+          </div>
+
+          <button type="submit" id="btn-submit-profile" style="{% if form.speciality %}margin-top: 1rem;{% endif %}">ATUALIZAR PERFIL</button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% if messages %}
+
+    {% for message in messages %}
+      {% include 'modals/modalSucess.html' %}
+    {% endfor %}
+
+
+{% endif %}
+
+{% endblock Main_Patient %}

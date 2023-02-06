@@ -1,0 +1,119 @@
+/* Fonts */ /* Fonts */
+/* Usada no Header only */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap");
+/* Source Sans Pro */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap");
+/* Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+/* Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/* Outfit */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+/* define variables */
+.base_patient_sector {
+  min-height: 100vh;
+  max-height: 100%;
+  background: linear-gradient(to right, #0098b9, #148098);
+  display: flex;
+  flex-direction: column;
+}
+
+ul.list-header-patient {
+  height: 115px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #036e85;
+  margin: 0px;
+  padding: 0 32px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+ul.list-header-patient li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+ul.list-header-patient li a {
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
+  display: flex;
+  gap: 27px;
+  align-items: center;
+  color: #fff;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 29px;
+}
+ul.list-header-patient li a:hover {
+  color: #fff;
+}
+ul.list-header-patient li a p {
+  margin: 0;
+}
+@media (max-width: 1300px) {
+  ul.list-header-patient {
+    border-radius: 0px;
+  }
+}
+@media (max-width: 1000px) {
+  ul.list-header-patient {
+    height: 60px;
+  }
+  ul.list-header-patient p {
+    display: none;
+  }
+}
+
+main {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.changeColor {
+  filter: brightness(0) saturate(100%) invert(81%) sepia(33%) saturate(5977%) hue-rotate(1deg) brightness(106%) contrast(105%);
+}
+
+/* Setor Paciente */
+.item-profile-notification {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.ellipse-bg-01 {
+  position: fixed;
+  bottom: -1000px;
+  right: -1100px;
+  height: 1612px;
+  width: 2637.6px;
+  background: linear-gradient(rgba(255, 255, 255, 0.04), rgb(0, 141, 172));
+  border-radius: 50%;
+  transform: rotate(-4%);
+}
+
+.ellipse-bg-02 {
+  position: fixed;
+  bottom: -1400px;
+  left: -1100px;
+  height: 1612px;
+  width: 2637.6px;
+  background: linear-gradient(rgba(255, 255, 255, 0.06), rgba(0, 152, 185, 0.77));
+  border-radius: 50%;
+  transform: rotate(-4deg);
+}
+
+.ellipse-bg-03 {
+  position: fixed;
+  bottom: -1400px;
+  right: -800px;
+  height: 1612px;
+  width: 2637.6px;
+  background: linear-gradient(rgba(0, 152, 185, 0.2), rgba(255, 255, 255, 0.8));
+  border-radius: 50%;
+  transform: rotate(-20deg);
+}/*# sourceMappingURL=style.css.map */

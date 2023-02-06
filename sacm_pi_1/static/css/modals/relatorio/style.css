@@ -1,0 +1,308 @@
+::-webkit-calendar-picker-indicator {
+  filter: brightness(0) saturate(100%) invert(63%) sepia(37%) saturate(1667%)
+    hue-rotate(2deg) brightness(111%) contrast(106%);
+  height: 18.333332061767578px;
+  width: 16.666667938232422px;
+}
+p {
+  margin-bottom: -0px;
+}
+:root {
+  --yellow_primary: #ffb800;
+  --white_primary: #fff;
+  --yellow_100: #fff7e5;
+  --red_300: #e45038;
+}
+.modal6 {
+  height: 100%; /* Full height */
+  width: 100%; /* Full width */
+  position: absolute;
+  z-index: 1;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+@media (min-width: 1400px) {
+  .modal6 {
+    width: calc(100vw - 20vw);
+    margin-left: 20vw;
+  }
+}
+
+/* Modal Content */
+.modal-content7 {
+  border: none;
+  width: fit-content;
+  border-radius: 20px;
+  background-color: var(--white_primary);
+  margin: auto;
+
+  position: absolute;
+
+  z-index: -2;
+  /* float: right;
+    margin-right: 5%; */
+}
+
+/* The Close Button */
+.close6 {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close6:hover,
+.close6:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.body_7 {
+  /* height: 713px; */
+  height: 690px;
+  width: 601px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 184, 0, 1);
+
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+.close_icon {
+  float: right;
+  height: 27px;
+  cursor: pointer;
+  padding-right: 8px;
+  padding-top: 8px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.close_icon button {
+  border: none;
+  background-color: var(--yellow_100);
+  width: fit-content;
+  cursor: pointer;
+}
+.background_top {
+  border-radius: 20px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  background-color: var(--yellow_100);
+  width: 598px;
+  /* height: 119px; */
+  padding-bottom: 10px;
+}
+
+.report {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 31px;
+  line-height: 100.5%;
+  margin-right: 71px;
+  margin-left: 71px;
+  margin-bottom: 41px;
+  text-align: center;
+  letter-spacing: 0.15px;
+  background-color: var(--yellow_100);
+  color: var(--yellow_primary);
+  margin-bottom: 16px;
+}
+.date {
+  width: 397px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+}
+.date div .select_time {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 160%;
+  /* identical to box height, or 32px */
+  background-color: var(--white_primary);
+  letter-spacing: 0.15px;
+  padding-top: 16px;
+  margin-left: -10px;
+  /* Black - 500 */
+
+  color: #000000;
+}
+.date input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 8px;
+  width: 100%;
+  cursor: pointer;
+  color: #979797;
+  background: var(--yellow_100);
+  outline: none;
+}
+.date p {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding-right: 8px;
+  width: 100%;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  color: #979797;
+
+  background: var(--yellow_100);
+  padding-left: 9px;
+  padding-top: 9px;
+}
+.last_date_m {
+  margin-top: 16px;
+}
+.informations {
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 20px;
+}
+.addtional_information {
+  width: 67%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 32px;
+}
+.addtional_information .addtional_information div label {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 100;
+  font-size: 16 px;
+  line-height: 150%;
+  /* identical to box height, or 24px */
+
+  letter-spacing: 0.15px;
+
+  /* Light/Text/Primary */
+
+  color: rgba(0, 0, 0, 0.87);
+}
+.checkbox {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2px;
+}
+.checkbox div {
+  padding-top: 6px;
+}
+.checkbox div input {
+  cursor: pointer;
+}
+.padding_left_checkbox {
+  padding-left: 12px;
+}
+.type_report {
+  display: flex;
+  padding-left: 42px;
+  flex-direction: column;
+}
+.info {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  /* identical to box height, or 30px */
+  letter-spacing: 0.15px;
+  color: rgba(0, 0, 0, 0.87);
+}
+.generate_report {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  padding-top: 45px;
+  margin-left: 16px;
+}
+.generate_report button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 226px;
+  height: 40px;
+  background: var(--yellow_primary);
+  border-radius: 4px;
+  color: var(--white_primary);
+  border: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  cursor: pointer;
+  margin-right: 8px;
+}
+.generate_report button p {
+  padding-left: 11px;
+}
+
+span.label {
+  margin-left: 35px;
+  display: inline-block;
+}
+/* style for the radio field */
+input[type="radio"] {
+  /* -webkit-appearance: none; */
+  width: 20px;
+  height: 20px;
+  /* border: 1px solid var(--yellow_primary); */
+  /* border-radius: 50%;
+  outline: none; */
+}
+
+/* input[type="radio"]:before {
+  content: "";
+  display: block;
+  width: 63%;
+  height: 63%;
+  margin: 20% auto;
+  border-radius: 50%;
+} */
+
+/* input[type="radio"]:checked:before {
+  background: var(--yellow_primary);
+} */
+.radio-item {
+  display: flex;
+  gap: 11px;
+}
+/* style for checked state */
+
+/* input[type="checkbox" i] {
+  color: #000000;
+} */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bigger_checkbox {
+  height: 18px;
+  width: 18px;
+  /* accent-color: var(--yellow_primary); */
+}
+
+.align_center {
+  display: flex;
+  align-items: center;
+}
+.align_center label /* texto do checkbox */ {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.15px;
+  color: rgba(0, 0, 0, 0.87);
+}

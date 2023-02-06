@@ -1,0 +1,50 @@
+{% extends 'clinic/base.html' %}
+{% load static %}
+
+{% block title %}Atualizar Agendamento{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/atualizar_agendamento/style.css' %}">
+{% endblock style %}
+
+{% block Main %}
+
+<div class="container">
+  <div class="breadgroup">
+    <a href="{% url 'clinic:agenda_01' %}" class="item-1" style="text-decoration: none;">
+      <img src="{% static 'assets/icons/diary_small_blue.png' %}" alt="...">
+      <p>Agenda Do Dia <small>/</small></p>
+    </a>
+    <div class="item-2">
+      <img src="{% static 'assets/icons/note_pencil_small_gray.png' %}" alt="">
+      <p>Atualizar Agendamento</p>
+    </div>
+  </div>
+  <h1>Atualizar Agendamento</h1>
+
+  {{ form.errors }}
+  {{ form.non_field_errors }}
+  <div class="container_inputs">
+    <form method='post'>
+      {% csrf_token %}
+
+      <div class="field_date">
+        {{ form.date.label_tag }}
+        {{ form.date }}
+      </div>
+
+      <div class="field_time">
+        {{ form.hour.label_tag }}
+        {{ form.hour }}
+      </div>
+
+      <div class="description">
+        {{ form.description.label_tag }}
+        {{ form.description }}
+      </div>
+
+      <button>Atualizar</button>
+    </form>
+  </div>
+</div>
+{% endblock Main %}

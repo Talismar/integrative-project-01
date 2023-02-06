@@ -1,0 +1,59 @@
+/* define variables */ /* Fonts */
+/* Usada no Header only */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap");
+/* Source Sans Pro */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap");
+/* Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+/* Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/* Outfit */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+.box_container {
+  height: 793px;
+  width: 1371px;
+  background-color: #fff;
+  border-radius: 25px;
+  font-family: "Poppins", sans-serif;
+}
+.box_container .circle_container {
+  position: absolute;
+}
+.box_container .circle_container .circle {
+  width: 80px;
+  height: 88px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: relative;
+  top: 98px;
+  left: -40px;
+}
+.box_container .circle_container .circle img {
+  margin: 16px;
+  margin-top: 22px;
+}
+.box_container .box_header {
+  margin: 42px 0 32px 60px;
+}
+.box_container .box_header h1 {
+  font-size: 48px;
+}
+.box_container .box_main {
+  margin-left: 60px;
+  margin-right: 46px;
+}
+.box_container .box_main p {
+  font-size: 36px;
+  text-align: justify;
+}
+
+@media (max-width: 1500px) {
+  .box_container {
+    border-radius: 0;
+    height: 100%;
+    width: 100%;
+  }
+  .box_container .circle_container {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */

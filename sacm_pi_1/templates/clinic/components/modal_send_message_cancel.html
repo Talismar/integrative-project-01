@@ -1,0 +1,44 @@
+<!-- Modal -->
+<div class="modal fade" id="sendMessageCancelModal_{{ i.pk }}" tabindex="-1" aria-labelledby="sendMessageCancelModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content" id="custom-modal-content-sendMessageCancelModal">
+      <div class="modal-header" id="custom-modal-header-notifica-paciente-sendMessageCancelModal">
+        <h1 class="modal-title" id="custom-modal-title-notifica-paciente-sendMessageCancelModal">
+          Notifique o Paciente
+        </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="custom-modal-body-sendMessageCancelModal">
+
+        <h3>Tipo de mensagem:</h3>
+
+        <form action="{% url 'clinic:cancel_schedule' %}" method="post">
+          {% csrf_token %}
+
+          <div>
+
+            <label for="id_default_system">
+              <input type="radio" name="_message_" id="id_default_system" checked>
+              Padrão do sistema
+            </label>
+
+            <label for="id_personalized">
+              <input type="radio" name="_message_" id="id_personalized">
+              Personalizada
+            </label>
+
+          </div>
+
+          <input type="hidden" name="pk" value="{{ i.pk }}">
+
+          <label for="id_message_cancellation">Mensagem personalizada:</label>
+          <textarea name="message_cancellation" id="id_message_cancellation" rows="5"></textarea>
+
+          <button type="submit" class="btn">
+            Enviar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

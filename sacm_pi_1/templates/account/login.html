@@ -1,0 +1,39 @@
+{% extends "account/base.html" %}
+{% load static %}
+
+{% block title %} Login {% endblock title %}
+
+{% block style %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/login/style.css' %}"/>
+{% endblock style %}
+
+{% block Body %}
+  <body>
+    <main class="container">
+
+      <div class="container_login">
+        <img src="{% static 'assets/imgs/logo_medium.png' %}"
+             alt="..."/>
+        <h2>Faça seu login</h2>
+        <form method="post">
+          {% csrf_token %}
+
+          {% if form.errors %}
+            <p>Your username and password didn't match. Please try again.</p>
+          {% endif %}
+
+          <input type="text" placeholder="Matricula" name="username"/>
+          <input type="password" placeholder="Senha" name="password"/>
+          <input type="submit" value="ENTRAR" style="cursor: pointer;">
+        </form>
+      </div>
+
+      <img src="{% static 'assets/imgs/img_login.png' %}" alt="Logo" />
+
+    </main>
+    <div class="ellipse">
+      <div class="ellipse-bg-01"></div>
+      <div class="ellipse-bg-02"></div>
+    </div>
+  </body>
+{% endblock Body %}

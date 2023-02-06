@@ -1,0 +1,111 @@
+@import "../../global/colors";
+@import "../../global/fonts";
+
+/* Ellipse */
+// @import "../../../global/ellipse.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: $linear_background_02;
+  font-family: "Poppins", sans-serif;
+
+  display: flex;
+  justify-content: center;
+}
+
+main.container {
+  height: 100%;
+  display: flex;
+  max-width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+
+  .container_login {
+    width: 662px;
+    height: 942px;
+    background-color: $white_primary;
+    border-radius: 16px;
+
+    flex-shrink: 0;
+
+    margin-top: 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      font-size: 32px;
+      font-weight: 600;
+
+      margin-top: 46px;
+    }
+
+    form {
+      width: 440px;
+
+      margin-top: 100px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+
+      input {
+        font-size: 24px;
+        font-weight: 200;
+        height: 46px;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #000;
+      }
+
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        // margin: 0;
+      }
+
+      /* Firefox */
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      /* Button */
+      input[type="submit"] {
+        height: 66px;
+        border-radius: 16px;
+        background-color: transparent;
+
+        font-size: 32px;
+        font-weight: 500;
+        border: 1px solid rgba(0, 0, 0, 0.876);
+        color: rgba(0, 0, 0, 0.876);
+      }
+    }
+
+    input[type="number"] {
+      // background-image: url("../../assets/icons/person_black.svg");
+      background-position: 400px 0px;
+      background-repeat: no-repeat;
+    }
+
+    input[type="password"] {
+      // background-image: url("../../assets/icons/eye_black.svg");
+      background-position: 400px 0px;
+      background-repeat: no-repeat;
+    }
+  }
+
+  img {
+    padding-bottom: 24px;
+  }
+}

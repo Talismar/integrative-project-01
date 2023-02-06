@@ -1,0 +1,148 @@
+{% extends 'clinic/base.html' %}
+{% load static %}
+
+{% block title %}Agenda - SACM{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'agenda_02/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/modals/cancel_schedule/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/modals/notification_patient/notifique_paciente.css' %}">
+{% endblock style %}
+
+{% block Main %}
+
+<div class="box_container">
+
+  <div class="circle_container">
+    <div class="circle">
+      <img src="{% static 'assets/icons/calendar_yellow.png' %}" alt="Icon Calendário">
+    </div>
+  </div>
+
+  <div class="box_header">
+
+    <section class="title">
+
+      <div class="info_title">
+        <div class="flex_title">
+          <strong>
+            {{ month }}
+          </strong>
+
+          <p>Agenda do dia</p>
+        </div>
+
+        <strong>{{ day }}</strong>
+
+      </div>
+
+      <div class="inputs_buttons">
+        <form method="get">
+          <input type="text" placeholder="Buscar por matricula" name="search">
+
+          <button type="submit" style="margin-left: 0.8rem;">BUSCAR</button>
+        </form>
+
+        <form action="{% url 'clinic:novo_agendamento' %}" method="get">
+          <input type="hidden" name="new_schedule" value="{{ year }}-{{ month }}-{{ day }}">
+          <button type="submit" style="border: none;">
+            NOVO AGENDAMENTO
+          </button>
+        </form>
+
+        <a href="{% url 'clinic:agenda_01' %}">
+          <img src="{% static 'assets/icons/list_type_01.png' %}" alt="Lista com fotos">
+        </a>
+      </div>
+
+    </section>
+
+  </div>
+
+  <section class="box_main">
+
+    {% for i in object_list %}
+      <div class="item_list
+                      {% if i.status.name == 'Cancelado' %}check-cancelado{% endif %}
+                      {% if i.status.name == 'Concluído' %}check{% endif %}
+                 "
+
+      >
+        <div class="header">
+          <div class="bg_photo">
+            <div class="circle-small"></div>
+            <div class="photo" style="overflow: hidden;">
+
+              {% if i.matriculation.photo %}
+                <img src="{{ i.matriculation.photo.url }}" alt="Profile image"
+                style="width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 50%;
+                " >
+              {% endif %}
+
+            </div>
+          </div>
+
+          <div class="icons">
+
+            {% if i.status.name == "Pendente" %}
+
+              <a href="{% url 'clinic:mark_as_done' i.pk %}">
+                <img src="{% static 'assets/icons/check_gray.png' %}" alt="check">
+              </a>
+
+              <a href="{% url 'clinic:atualizar_agendamento' i.pk %}">
+                <img src="{% static 'assets/icons/note_pencil_black.svg' %}" alt="View Paciente">
+              </a>
+
+              <!-- Trigger/Open The Modal -->
+              <button data-bs-toggle="modal" data-bs-target="#cancelScheduleModal_{{ i.pk }}">
+                <img src="{% static 'assets/icons/x_square_red.svg' %}" alt="Cancel">
+              </button>
+
+              {% include 'clinic/components/modal_cancel_schedule.html' %}
+
+              {% else %}
+
+                <button style="cursor: default;">
+                  {% if i.status.name == "Cancelado"  %}
+                    <img src="{% static 'assets/icons/check_gray.png' %}" alt="check">
+                    {% else %}
+                    <img src="{% static 'assets/icons/check_green.svg' %}" alt="check">
+                  {% endif %}
+                </button>
+                <button style="cursor: default;">
+                  <a href="#" style="cursor: default;">
+                    <img src="{% static 'assets/icons/note_pencil_check.png' %}" alt="View Paciente">
+                  </a>
+                </button>
+                <button style="cursor: default;">
+                  <img src="{% static 'assets/icons/x_square_red_check.png' %}" alt="Cancel">
+                </button>
+
+            {% endif %}
+          </div>
+        </div>
+
+        <h2>{{ i.matriculation.name }}</h2>
+
+        <div class="footer">
+          <strong class="matricula">
+            {{ i.matriculation.username }}
+          </strong>
+
+          <section>
+            <p class="hour">{{ i.hour|time:"H:i" }}</p>
+            <p class="date">{{ i.date|date:'Y-m-d' }}</p>
+          </section>
+        </div>
+      </div>
+    {% endfor %}
+
+  </section>
+
+</div>
+
+{% endblock Main %}
