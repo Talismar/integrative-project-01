@@ -23,7 +23,7 @@
           </a>
         </li>
         <li>
-          {% comment %} <a href="{% url 'login' %}"></a> {% endcomment %}
+          <a href="{% url 'users:login' %}"></a>
           {% if not request.user.is_authenticated %}
           <a href="{% url 'users:login' %}">Login</a>
           {% endif %}
