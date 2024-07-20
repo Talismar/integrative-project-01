@@ -1,0 +1,15 @@
+services:
+  postgresql:
+    image: talismar/postgres-audit:1.0
+    container_name: sacm_postgresql
+    ports:
+      - 5432:5432
+    volumes:
+      - postgresql-logs:/var/log/postgresql
+    environment:
+      - POSTGRES_DB=sacm_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Senha123*
+
+volumes:
+  postgresql-logs:

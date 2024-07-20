@@ -4,12 +4,13 @@ from django.contrib import admin
 from django.urls import include, path
 from django.views import defaults as default_views
 from django.views.generic import TemplateView
-from .views import Redirection, AboutPageView
+
+from .views import AboutPageView, Redirection
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/index.html"), name="home"),
-    path('home/',  Redirection.as_view()),
-    path('sobre/', AboutPageView.as_view(), name="sobre"),
+    path("home/", Redirection.as_view()),
+    path("sobre/", AboutPageView.as_view(), name="sobre"),
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
